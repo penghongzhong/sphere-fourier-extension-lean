@@ -1,0 +1,57 @@
+name: Lean verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lean-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Install pinned Lean 4.34.1
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 5 \
+            https://github.com/leanprover/lean4/releases/download/v4.34.1/lean-4.34.1-linux.tar.zst \
+            --output "$RUNNER_TEMP/lean.tar.zst"
+          echo "47bf4bbd78f70c2e9670598ab7124d92b6efb7330ff33e5fbb4030f6fd72e4e4  $RUNNER_TEMP/lean.tar.zst" | sha256sum --check
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.34.1-linux/bin" >> "$GITHUB_PATH"
+          rm "$RUNNER_TEMP/lean.tar.zst"
+      - name: Cache pinned external dependencies
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: .lake/packages
+          key: mathlib-${{ runner.os }}-4.34.1-${{ hashFiles('lake-manifest.json') }}
+      - name: Fetch Mathlib cache
+        run: lake exe cache get
+      - name: Recompile all project sources and audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build
+          python3 scripts/verify.py --jobs 3 2>&1 | tee build/verification.log
+      - name: Upload complete verification evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lean-verification-${{ github.sha }}
+          path: |
+            build/Verification.json
+            build/compile-state.json
+            build/verification.log
+            build/logs/
+          if-no-files-found: warn
+          retention-days: 90

@@ -1,0 +1,658 @@
+{
+  "source_commit": "4eaee87548250b2682affda7d05d947c05554bae",
+  "all_statement_and_proof_bodies_unchanged": true,
+  "changes": "Only import Mathlib is replaced with a generated union of pinned Mathlib prerequisites.",
+  "pruned_files": [
+    "OAI/Analysis/Calculus/Current/Algebra.lean",
+    "OAI/Analysis/Calculus/Quaternion/Algebra.lean",
+    "OAI/Analysis/Calculus/Quaternion/Bochner.lean",
+    "OAI/Analysis/Calculus/Quaternion/Polarization.lean",
+    "OAI/Analysis/Fourier/Estimates.lean",
+    "OAI/Analysis/Fourier/LocalSmoothing/Interpolation/Exponents.lean",
+    "OAI/Analysis/Fourier/Radial/Curve.lean",
+    "OAI/Analysis/Fourier/Radial/Decay.lean",
+    "OAI/Analysis/Fourier/Radial/ODE.lean",
+    "OAI/Analysis/Fourier/Radial/PositivePower.lean",
+    "OAI/Analysis/Fourier/Radial/Tail.lean",
+    "OAI/Analysis/Fourier/Radial/TrigIntegral.lean",
+    "OAI/Analysis/Fourier/SquareFunction/Basic.lean",
+    "OAI/Analysis/Fourier/SquareFunction/Dyadic/Cover.lean",
+    "OAI/Analysis/Fourier/SquareFunction/Maximal.lean",
+    "OAI/Analysis/Fourier/SquareFunction/Multiplier.lean",
+    "OAI/Analysis/Fourier/WavePackets/AngularGrid.lean",
+    "OAI/Analysis/Fourier/WavePackets/Oscillatory.lean",
+    "OAI/Analysis/Normed/Function/Sobolev/Reflection/Coefficients.lean",
+    "OAI/Analysis/Normed/Function/Sobolev/Reflection/Map.lean",
+    "OAI/Analysis/Normed/Operator/ClosedSubspace/Smooth.lean",
+    "OAI/Analysis/PDE/Concentration/AwayZeroExtension.lean",
+    "OAI/Analysis/PDE/Concentration/Basic.lean",
+    "OAI/Analysis/PDE/Concentration/CompactChain.lean",
+    "OAI/Analysis/PDE/Concentration/GaussianJets.lean",
+    "OAI/Analysis/PDE/Concentration/Input/Scale.lean",
+    "OAI/Analysis/PDE/Concentration/PolarIntegral.lean",
+    "OAI/Analysis/PDE/Concentration/WeakLaplacian.lean",
+    "OAI/Analysis/PDE/Elliptic/Boundary/CompactHolder.lean",
+    "OAI/Analysis/PDE/Elliptic/Boundary/HolderGluing.lean",
+    "OAI/Analysis/PDE/Elliptic/Boundary/InteriorBall.lean",
+    "OAI/Analysis/PDE/Elliptic/Boundary/Interpolation.lean",
+    "OAI/Analysis/PDE/Elliptic/Boundary/Schauder/Compact.lean",
+    "OAI/Analysis/PDE/Energy/Algebra.lean",
+    "OAI/Analysis/PDE/Green/GreenReal.lean",
+    "OAI/Analysis/PDE/Green/LocalExtension.lean",
+    "OAI/Analysis/PDE/Green/Physical/Change.lean",
+    "OAI/Analysis/PDE/Schauder/Calculus/Schauder/Kernel.lean",
+    "OAI/Analysis/PDE/Schauder/Calculus/Schauder/RadialIntegral.lean",
+    "OAI/Analysis/PDE/Schauder/Calculus/SliceDerivative.lean",
+    "OAI/Analysis/PDE/Schauder/Dirichlet/PointwiseSchauderCover.lean",
+    "OAI/Analysis/PDE/Variational/Completion.lean",
+    "OAI/Analysis/PDE/Variational/Periodization.lean",
+    "OAI/LinearAlgebra/Moore/Basic.lean",
+    "OAI/LinearAlgebra/Moore/ODE.lean",
+    "OAI/Analysis/Fourier/Restriction/CoverPowers.lean",
+    "OAI/Analysis/Fourier/Restriction/MixedPowers.lean",
+    "OAI/Analysis/Fourier/Restriction/Schur.lean"
+  ],
+  "prerequisite_roots": [
+    "Mathlib.Algebra.Module.ZLattice.Basic",
+    "Mathlib.Analysis.Analytic.IsolatedZeros",
+    "Mathlib.Analysis.BoxIntegral.Box.SubboxInduction",
+    "Mathlib.Analysis.BoxIntegral.Partition.Measure",
+    "Mathlib.Analysis.CStarAlgebra.Matrix",
+    "Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension",
+    "Mathlib.Analysis.Calculus.BumpFunction.InnerProduct",
+    "Mathlib.Analysis.Calculus.BumpFunction.SmoothApprox",
+    "Mathlib.Analysis.Calculus.ContDiff.Basic",
+    "Mathlib.Analysis.Calculus.ContDiff.Comp",
+    "Mathlib.Analysis.Calculus.ContDiff.Convolution",
+    "Mathlib.Analysis.Calculus.ContDiff.Deriv",
+    "Mathlib.Analysis.Calculus.ContDiff.FiniteDimension",
+    "Mathlib.Analysis.Calculus.ContDiff.Operations",
+    "Mathlib.Analysis.Calculus.ContDiff.RCLike",
+    "Mathlib.Analysis.Calculus.ContDiff.WithLp",
+    "Mathlib.Analysis.Calculus.Deriv.Comp",
+    "Mathlib.Analysis.Calculus.Deriv.Inverse",
+    "Mathlib.Analysis.Calculus.Deriv.Mul",
+    "Mathlib.Analysis.Calculus.Deriv.Pow",
+    "Mathlib.Analysis.Calculus.Deriv.Slope",
+    "Mathlib.Analysis.Calculus.FDeriv.Add",
+    "Mathlib.Analysis.Calculus.FDeriv.Basic",
+    "Mathlib.Analysis.Calculus.FDeriv.Comp",
+    "Mathlib.Analysis.Calculus.FDeriv.CompCLM",
+    "Mathlib.Analysis.Calculus.FDeriv.Extend",
+    "Mathlib.Analysis.Calculus.FDeriv.Mul",
+    "Mathlib.Analysis.Calculus.FDeriv.Partial",
+    "Mathlib.Analysis.Calculus.FDeriv.Symmetric",
+    "Mathlib.Analysis.Calculus.Gradient.Basic",
+    "Mathlib.Analysis.Calculus.Implicit",
+    "Mathlib.Analysis.Calculus.ImplicitContDiff",
+    "Mathlib.Analysis.Calculus.InverseFunctionTheorem.ApproximatesLinearOn",
+    "Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff",
+    "Mathlib.Analysis.Calculus.LineDeriv.Basic",
+    "Mathlib.Analysis.Calculus.LocalExtr.Basic",
+    "Mathlib.Analysis.Calculus.MeanValue",
+    "Mathlib.Analysis.Calculus.SmoothSeries",
+    "Mathlib.Analysis.Calculus.Taylor",
+    "Mathlib.Analysis.Calculus.UniformLimitsDeriv",
+    "Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff",
+    "Mathlib.Analysis.Distribution.FourierMultiplier",
+    "Mathlib.Analysis.Distribution.SchwartzSpace.Basic",
+    "Mathlib.Analysis.Fourier.AddCircleMulti",
+    "Mathlib.Analysis.Fourier.FourierTransformDeriv",
+    "Mathlib.Analysis.Fourier.LpSpace",
+    "Mathlib.Analysis.InnerProductSpace.Adjoint",
+    "Mathlib.Analysis.InnerProductSpace.Calculus",
+    "Mathlib.Analysis.InnerProductSpace.Dual",
+    "Mathlib.Analysis.InnerProductSpace.Laplacian",
+    "Mathlib.Analysis.InnerProductSpace.LaxMilgram",
+    "Mathlib.Analysis.InnerProductSpace.Positive",
+    "Mathlib.Analysis.InnerProductSpace.ProdL2",
+    "Mathlib.Analysis.InnerProductSpace.Projection.Minimal",
+    "Mathlib.Analysis.InnerProductSpace.Projection.Reflection",
+    "Mathlib.Analysis.InnerProductSpace.Rayleigh",
+    "Mathlib.Analysis.InnerProductSpace.Spectrum",
+    "Mathlib.Analysis.InnerProductSpace.Trace",
+    "Mathlib.Analysis.Matrix.Normed",
+    "Mathlib.Analysis.Matrix.Order",
+    "Mathlib.Analysis.Matrix.PosDef",
+    "Mathlib.Analysis.MeanInequalitiesPow",
+    "Mathlib.Analysis.Normed.Group.Submodule",
+    "Mathlib.Analysis.Normed.Lp.SmoothApprox",
+    "Mathlib.Analysis.Normed.Module.FiniteDimension",
+    "Mathlib.Analysis.Normed.Module.WeakDual",
+    "Mathlib.Analysis.Normed.Operator.Banach",
+    "Mathlib.Analysis.Normed.Operator.Bilinear",
+    "Mathlib.Analysis.Normed.Operator.BoundedLinearMaps",
+    "Mathlib.Analysis.Normed.Operator.CompleteCodomain",
+    "Mathlib.Analysis.Normed.Operator.ContinuousLinearMap",
+    "Mathlib.Analysis.Normed.Operator.NormedSpace",
+    "Mathlib.Analysis.Normed.Ring.Units",
+    "Mathlib.Analysis.PSeries",
+    "Mathlib.Analysis.Real.Sqrt",
+    "Mathlib.Analysis.SpecialFunctions.Complex.Circle",
+    "Mathlib.Analysis.SpecialFunctions.ExpDeriv",
+    "Mathlib.Analysis.SpecialFunctions.JapaneseBracket",
+    "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Continuity",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Deriv",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+    "Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv",
+    "Mathlib.Analysis.SpecificLimits.Basic",
+    "Mathlib.Analysis.SpecificLimits.Normed",
+    "Mathlib.Data.Int.Interval",
+    "Mathlib.Geometry.Manifold.PartitionOfUnity",
+    "Mathlib.LinearAlgebra.Basis.Prod",
+    "Mathlib.LinearAlgebra.Trace",
+    "Mathlib.MeasureTheory.Constructions.HaarToSphere",
+    "Mathlib.MeasureTheory.Constructions.Pi",
+    "Mathlib.MeasureTheory.Function.Jacobian",
+    "Mathlib.MeasureTheory.Function.L2Space",
+    "Mathlib.MeasureTheory.Function.LpSeminorm.CompareExp",
+    "Mathlib.MeasureTheory.Function.LpSeminorm.Monotonicity",
+    "Mathlib.MeasureTheory.Function.LpSpace.Basic",
+    "Mathlib.MeasureTheory.Function.LpSpace.Complete",
+    "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+    "Mathlib.MeasureTheory.Integral.DivergenceTheorem",
+    "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+    "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Add",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+    "Mathlib.MeasureTheory.Integral.Prod",
+    "Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace",
+    "Mathlib.MeasureTheory.Measure.Haar.NormedSpace",
+    "Mathlib.MeasureTheory.Measure.Hausdorff",
+    "Mathlib.MeasureTheory.Measure.Lebesgue.Complex",
+    "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+    "Mathlib.MeasureTheory.Measure.OpenPos",
+    "Mathlib.MeasureTheory.SpecificCodomains.WithLp",
+    "Mathlib.Tactic",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Topology.Algebra.InfiniteSum.Real",
+    "Mathlib.Topology.Compactness.Lindelof",
+    "Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli",
+    "Mathlib.Topology.ContinuousMap.Bounded.Basic",
+    "Mathlib.Topology.ContinuousMap.Bounded.Normed",
+    "Mathlib.Topology.ContinuousMap.Compact",
+    "Mathlib.Topology.ContinuousMap.SecondCountableSpace",
+    "Mathlib.Topology.Maps.Proper.Basic",
+    "Mathlib.Topology.MetricSpace.Cauchy",
+    "Mathlib.Topology.MetricSpace.CoveringNumbers",
+    "Mathlib.Topology.MetricSpace.HausdorffDimension",
+    "Mathlib.Topology.MetricSpace.Thickening",
+    "Mathlib.Topology.Order.LeftRightNhds",
+    "Mathlib.Topology.Sequences",
+    "Mathlib.Topology.UniformSpace.Ascoli",
+    "Mathlib.Topology.UniformSpace.CompactConvergence",
+    "Mathlib.Topology.UniformSpace.CompleteSeparated",
+    "Mathlib.Topology.UnitInterval"
+  ],
+  "generated_prerequisite_sha256": "9b21415edb418d075f3ded9dd0194b0924a9a809aa0b5e468722f5877bca4906",
+  "no_shadowed_mathlib_module": true,
+  "extra_imports": {
+    "OAI/Analysis/Fourier/Restriction/Basic.lean": [
+      "Mathlib.MeasureTheory.Function.LpSeminorm.LpNorm"
+    ],
+    "OAI/Analysis/Fourier/WavePackets/Periodization.lean": [
+      "Mathlib.Algebra.Module.ZLattice.Summable"
+    ],
+    "OAI/Analysis/Fourier/WavePackets/Periodic.lean": [
+      "Mathlib.Data.Pi.Interval"
+    ],
+    "OAI/Analysis/Fourier/BochnerRiesz/MaximalShell.lean": [
+      "Mathlib.Analysis.Real.Pi.Bounds"
+    ],
+    "OAI/Analysis/Calculus/Quaternion/Algebra.lean": [
+      "Mathlib.Algebra.Quaternion",
+      "Mathlib.Basic.Complex.BigOperators"
+    ],
+    "OAI/Analysis/Calculus/Quaternion/CurrentOperations.lean": [
+      "Mathlib.Analysis.Matrix.Normed",
+      "Mathlib.Analysis.Quaternion"
+    ],
+    "OAI/Analysis/Calculus/Current/Coefficients.lean": [
+      "Mathlib.Analysis.Calculus.Deriv.Star",
+      "Mathlib.Analysis.Calculus.FDeriv.Star"
+    ],
+    "OAI/Analysis/Calculus/Current/Quaternion.lean": [
+      "Mathlib.Analysis.Quaternion"
+    ],
+    "OAI/Analysis/Fourier/WavePackets/Assembly.lean": [
+      "Mathlib.MeasureTheory.Function.Floor"
+    ],
+    "OAI/Analysis/Calculus/Quaternion/Holomorphic.lean": [
+      "Mathlib.Analysis.Calculus.ContDiff.RestrictScalars"
+    ],
+    "OAI/Analysis/Normed/Function/Sobolev/Reflection/Coefficients.lean": [
+      "Mathlib.LinearAlgebra.Lagrange"
+    ],
+    "OAI/Analysis/PDE/Concentration/GaussianJets.lean": [
+      "Mathlib.Analysis.Real.Pi.Bounds"
+    ],
+    "OAI/Analysis/PDE/Concentration/Harmonic.lean": [
+      "Mathlib.Probability.Distributions.Gaussian.Real"
+    ],
+    "OAI/Analysis/PDE/Concentration/Annulus.lean": [
+      "Mathlib.Analysis.InnerProductSpace.Harmonic.Basic",
+      "Mathlib.Analysis.InnerProductSpace.Harmonic.Constructions"
+    ],
+    "OAI/Analysis/Calculus/Quaternion/ThirdDerivatives.lean": [
+      "Mathlib.Analysis.Quaternion"
+    ],
+    "OAI/Analysis/PDE/Green/BoundaryExtension.lean": [
+      "Mathlib.Analysis.Calculus.Rademacher"
+    ],
+    "OAI/Analysis/PDE/Concentration/TimeTrace.lean": [
+      "Mathlib.Analysis.Real.Pi.Bounds"
+    ],
+    "OAI/Analysis/PDE/Schauder/Calculus/Schauder/RadialIntegral.lean": [
+      "Mathlib.Analysis.SpecialFunctions.Pow.Integral"
+    ],
+    "OAI/Analysis/PDE/Schauder/Calculus/Schauder/Newtonian.lean": [
+      "Mathlib.Analysis.InnerProductSpace.Harmonic.Basic"
+    ],
+    "OAI/Analysis/PDE/Schauder/Calculus/Schauder/Singular.lean": [
+      "Mathlib.Analysis.SpecialFunctions.Pow.Integral"
+    ],
+    "OAI/LinearAlgebra/Moore/ODE.lean": [
+      "Mathlib.Analysis.ODE.Gronwall"
+    ],
+    "OAI/LinearAlgebra/Moore/Basic.lean": [
+      "Mathlib.Algebra.Quaternion"
+    ],
+    "OAI/LinearAlgebra/Moore/Derivative.lean": [
+      "Mathlib.Analysis.Quaternion"
+    ],
+    "OAI/Analysis/PDE/Dirichlet/FixedData.lean": [
+      "Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Order"
+    ],
+    "OAI/Analysis/Calculus/Current/Periodization.lean": [
+      "Mathlib.MeasureTheory.Function.Floor"
+    ],
+    "OAI/Analysis/PDE/Concentration/KernelScale.lean": [
+      "Mathlib.Analysis.Real.Pi.Bounds"
+    ],
+    "OAI/Analysis/Calculus/Current/Physical/Jacobian.lean": [
+      "Mathlib.LinearAlgebra.Complex.FiniteDimensional"
+    ],
+    "OAI/Analysis/PDE/Concentration/PatchVolume.lean": [
+      "Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls"
+    ],
+    "OAI/Analysis/PDE/Green/JacobianSmooth.lean": [
+      "Mathlib.Analysis.Calculus.Deriv.Abs"
+    ],
+    "OAI/Analysis/PDE/Schauder/Calculus/Boundary/MollifierKernel.lean": [
+      "Mathlib.Analysis.Calculus.Deriv.Abs"
+    ],
+    "OAI/Analysis/PDE/Variational/CoordinateLattice.lean": [
+      "Mathlib.Data.Pi.Interval"
+    ],
+    "OAI/Analysis/PDE/Concentration/FrequencyCount.lean": [
+      "Mathlib.Algebra.Order.Chebyshev"
+    ],
+    "OAI/Analysis/PDE/Variational/CoordinateWrap.lean": [
+      "Mathlib.MeasureTheory.Function.Floor"
+    ],
+    "OAI/Analysis/PDE/Weak/Elliptic/DifferenceBound.lean": [
+      "Mathlib.Analysis.Convex.Integral"
+    ],
+    "OAI/Analysis/Normed/Function/Sobolev/CoordinateDecay.lean": [
+      "Mathlib.Analysis.Real.Pi.Bounds"
+    ]
+  },
+  "import_repairs": [
+    {
+      "module": "OAI/Analysis/Fourier/WavePackets/Periodization",
+      "lookups": [
+        {
+          "identifier": "ZLattice.summable_norm_pow_inv",
+          "import": "Mathlib.Algebra.Module.ZLattice.Summable"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/Fourier/BochnerRiesz/MaximalShell",
+      "lookups": [
+        {
+          "identifier": "Real.pi_gt_three",
+          "import": "Mathlib.Analysis.Real.Pi.Bounds"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/Calculus/Quaternion/Algebra",
+      "lookups": [
+        {
+          "identifier": "Quaternion",
+          "import": "Mathlib.Algebra.Quaternion"
+        },
+        {
+          "identifier": "re_sum",
+          "import": "Mathlib.Basic.Complex.BigOperators"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/Calculus/Current/Coefficients",
+      "lookups": [
+        {
+          "identifier": "HasFDerivAtFilter.star",
+          "import": "Mathlib.Analysis.Calculus.FDeriv.Star"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/Calculus/Current/Coefficients",
+      "lookups": [
+        {
+          "identifier": "HasDerivAt.star",
+          "import": "Mathlib.Analysis.Calculus.Deriv.Star"
+        }
+      ],
+      "proof_body_changed": false,
+      "reason": "The derivative-specific star API must be imported so field notation does not resolve to the Frechet derivative API."
+    },
+    {
+      "module": "OAI/Analysis/Calculus/Current/Quaternion",
+      "lookups": [
+        {
+          "instance": "NormedAddCommGroup (Quaternion ℝ)",
+          "import": "Mathlib.Analysis.Quaternion"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/Fourier/WavePackets/Assembly",
+      "lookups": [
+        {
+          "identifier": "Int.measurable_floor",
+          "import": "Mathlib.MeasureTheory.Function.Floor"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/Calculus/Quaternion/Holomorphic",
+      "lookups": [
+        {
+          "identifier": "Function.restrictScalars_iteratedFDeriv",
+          "import": "Mathlib.Analysis.Calculus.ContDiff.RestrictScalars"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/Normed/Function/Sobolev/Reflection/Coefficients",
+      "lookups": [
+        {
+          "identifier": "Lagrange.eq_interpolate",
+          "import": "Mathlib.LinearAlgebra.Lagrange"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Concentration/GaussianJets",
+      "lookups": [
+        {
+          "identifier": "Real.pi_gt_three",
+          "import": "Mathlib.Analysis.Real.Pi.Bounds"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Concentration/Harmonic",
+      "lookups": [
+        {
+          "identifier": "gaussianPDFReal",
+          "import": "Mathlib.Probability.Distributions.Gaussian.Real"
+        },
+        {
+          "identifier": "gaussianReal",
+          "import": "Mathlib.Probability.Distributions.Gaussian.Real"
+        },
+        {
+          "identifier": "gaussianReal_apply",
+          "import": "Mathlib.Probability.Distributions.Gaussian.Real"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Concentration/Annulus",
+      "lookups": [
+        {
+          "identifier": "Exists.harmonicAt_log_norm",
+          "import": "Mathlib.Analysis.InnerProductSpace.Harmonic.Constructions"
+        },
+        {
+          "identifier": "HarmonicAt",
+          "import": "Mathlib.Analysis.InnerProductSpace.Harmonic.Basic"
+        },
+        {
+          "identifier": "HarmonicOnNhd",
+          "import": "Mathlib.Analysis.InnerProductSpace.Harmonic.Basic"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/Calculus/Quaternion/ThirdDerivatives",
+      "lookups": [
+        {
+          "instance": "NormedAddCommGroup (Quaternion ℝ)",
+          "import": "Mathlib.Analysis.Quaternion"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Green/BoundaryExtension",
+      "lookups": [
+        {
+          "identifier": "LipschitzWith.integral_lineDeriv_mul_eq",
+          "import": "Mathlib.Analysis.Calculus.Rademacher"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Concentration/TimeTrace",
+      "lookups": [
+        {
+          "identifier": "Real.pi_gt_three",
+          "import": "Mathlib.Analysis.Real.Pi.Bounds"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Schauder/Calculus/Schauder/RadialIntegral",
+      "lookups": [
+        {
+          "identifier": "integrableOn_ball_of_norm_le_rpow",
+          "import": "Mathlib.Analysis.SpecialFunctions.Pow.Integral"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Schauder/Calculus/Schauder/Newtonian",
+      "lookups": [
+        {
+          "identifier": "HarmonicAt",
+          "import": "Mathlib.Analysis.InnerProductSpace.Harmonic.Basic"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Schauder/Calculus/Schauder/Singular",
+      "lookups": [
+        {
+          "identifier": "locallyIntegrable_of_norm_le_rpow",
+          "import": "Mathlib.Analysis.SpecialFunctions.Pow.Integral"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/LinearAlgebra/Moore/ODE",
+      "lookups": [
+        {
+          "identifier": "eq_zero_of_abs_deriv_le_mul_abs_self_of_eq_zero_right",
+          "import": "Mathlib.Analysis.ODE.Gronwall"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/LinearAlgebra/Moore/Basic",
+      "lookups": [
+        {
+          "identifier": "Quaternion",
+          "import": "Mathlib.Algebra.Quaternion"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/LinearAlgebra/Moore/Derivative",
+      "lookups": [
+        {
+          "instance": "analytic instances on Quaternion ℝ",
+          "import": "Mathlib.Analysis.Quaternion"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Dirichlet/FixedData",
+      "lookups": [
+        {
+          "identifier": "Eq.le_algebraMap_norm_self",
+          "import": "Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Order"
+        },
+        {
+          "identifier": "Eq.neg_algebraMap_norm_le_self",
+          "import": "Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Order"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/Calculus/Current/Periodization",
+      "lookups": [
+        {
+          "identifier": "Measurable.fract / Int.measurable_floor",
+          "import": "Mathlib.MeasureTheory.Function.Floor"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Concentration/KernelScale",
+      "lookups": [
+        {
+          "identifier": "Real.pi_gt_three",
+          "import": "Mathlib.Analysis.Real.Pi.Bounds"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/Calculus/Current/Physical/Jacobian",
+      "lookups": [
+        {
+          "identifier": "Complex.finrank_real_complex",
+          "import": "Mathlib.LinearAlgebra.Complex.FiniteDimensional"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Concentration/PatchVolume",
+      "lookups": [
+        {
+          "identifier": "Complex.volume_closedBall",
+          "import": "Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Green/JacobianSmooth",
+      "lookups": [
+        {
+          "identifier": "ContDiffAt.abs",
+          "import": "Mathlib.Analysis.Calculus.Deriv.Abs"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Schauder/Calculus/Boundary/MollifierKernel",
+      "lookups": [
+        {
+          "identifier": "ContDiffAt.abs",
+          "import": "Mathlib.Analysis.Calculus.Deriv.Abs"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Variational/CoordinateLattice",
+      "lookups": [
+        {
+          "instance": "Pi.instLocallyFiniteOrder",
+          "import": "Mathlib.Data.Pi.Interval"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Concentration/FrequencyCount",
+      "lookups": [
+        {
+          "identifier": "sq_sum_le_card_mul_sum_sq",
+          "import": "Mathlib.Algebra.Order.Chebyshev"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Variational/CoordinateWrap",
+      "lookups": [
+        {
+          "identifier": "Measurable.fract / Int.measurable_floor",
+          "import": "Mathlib.MeasureTheory.Function.Floor"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/PDE/Weak/Elliptic/DifferenceBound",
+      "lookups": [
+        {
+          "identifier": "And.map_integral_le",
+          "import": "Mathlib.Analysis.Convex.Integral"
+        }
+      ],
+      "proof_body_changed": false
+    },
+    {
+      "module": "OAI/Analysis/Normed/Function/Sobolev/CoordinateDecay",
+      "lookups": [
+        {
+          "identifier": "Real.pi_gt_three",
+          "import": "Mathlib.Analysis.Real.Pi.Bounds"
+        }
+      ],
+      "proof_body_changed": false
+    }
+  ]
+}

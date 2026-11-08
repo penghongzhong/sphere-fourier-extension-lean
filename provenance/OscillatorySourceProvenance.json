@@ -1,0 +1,30 @@
+{
+  "repository": "roos-j/lean-oscillatory",
+  "license_notice": "Apache-2.0 notice in LeanOscillatory/VanDerCorput.lean",
+  "files": [
+    {
+      "path": "LeanOscillatory/VanDerCorput.lean",
+      "source_git_blob": "b6474dd75a62871d4f14b0dff26eba417debd736",
+      "url": "https://github.com/roos-j/lean-oscillatory/blob/master/LeanOscillatory/VanDerCorput.lean"
+    },
+    {
+      "path": "LeanOscillatory/Mathlib/Analysis/Complex/Trigonometric.lean",
+      "source_git_blob": "dffe8c6e8e4ce3ce47dfb17f4567845a3c8a717b",
+      "url": "https://github.com/roos-j/lean-oscillatory/blob/master/LeanOscillatory/Mathlib/Analysis/Complex/Trigonometric.lean"
+    },
+    {
+      "path": "LeanOscillatory/Mathlib/Analysis/Calculus/TangentCone/Real.lean",
+      "source_git_blob": "c37c272e4c2922633a5e75220d51ad3ded7d52ac",
+      "url": "https://github.com/roos-j/lean-oscillatory/blob/master/LeanOscillatory/Mathlib/Analysis/Calculus/TangentCone/Real.lean"
+    },
+    {
+      "path": "LeanOscillatory/Mathlib/Analysis/Calculus/Deriv/Inv'.lean",
+      "source_git_blob": "4ff063d725ae29a63fe59d3e91ad84c02d539401",
+      "url": "https://github.com/roos-j/lean-oscillatory/blob/master/LeanOscillatory/Mathlib/Analysis/Calculus/Deriv/Inv'.lean"
+    }
+  ],
+  "port_changes": [
+    "Use the same non-module import form as the replay project.",
+    "Apply funext to the pointwise iteratedDerivWithin_neg lemma in Lean 4.34.1."
+  ]
+}

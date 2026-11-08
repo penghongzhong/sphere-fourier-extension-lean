@@ -1,0 +1,742 @@
+{
+  "revision": 24,
+  "date_client": "2026-11-06",
+  "client_timezone": "Asia/Shanghai",
+  "lean": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "upstream_commit": "4eaee87548250b2682affda7d05d947c05554bae",
+  "modules_compiled": [
+    "RestrictionWork.DyadicAmplitudeApprox",
+    "RestrictionWork.DyadicExponentialKernel",
+    "RestrictionWork.DyadicWhitneyMass",
+    "RestrictionWork.DyadicWhitneyPairLocalize",
+    "RestrictionWork.GraphExtensionPairingLimits",
+    "RestrictionWork.GraphRestrictedKnappData",
+    "RestrictionWork.OriginalCapReverse",
+    "RestrictionWork.RestrictedStrongMatrix",
+    "RestrictionWork.RestrictedStrongNeighborhood",
+    "RestrictionWork.SphereRotations",
+    "RestrictionWork.WhitneyLayerMassFactor",
+    "RestrictionWork.GraphExtensionUnitPairing",
+    "RestrictionWork.GraphKnappUnitPairing",
+    "RestrictionWork.GraphWhitneyLayerHigh",
+    "RestrictionWork.OriginalCapContainsBall",
+    "RestrictionWork.GraphWhitneyPairRestricted",
+    "RestrictionWork.SphereFiniteCover",
+    "RestrictionWork.GraphRestrictedKnappSummation",
+    "RestrictionWork.GraphRestrictedKnappHigh",
+    "RestrictionWork.OriginalSmallCapBound",
+    "RestrictionWork.GraphRestrictedKnapp",
+    "RestrictionWork.OriginalSphereFromGraph",
+    "RestrictionWork.KnappGraphToOriginal",
+    "RestrictionWork.KnappAtomPairing",
+    "RestrictionWork.SphericalGraphKnappPairing",
+    "RestrictionWork.JSP001040Main",
+    "RestrictionWork.JSP001040CatalogStatement"
+  ],
+  "module_build_exit_codes": {
+    "DyadicAmplitudeApprox": 0,
+    "DyadicExponentialKernel": 0,
+    "DyadicWhitneyMass": 0,
+    "DyadicWhitneyPairLocalize": 0,
+    "GraphExtensionPairingLimits": 0,
+    "GraphRestrictedKnappData": 0,
+    "OriginalCapReverse": 0,
+    "RestrictedStrongMatrix": 0,
+    "RestrictedStrongNeighborhood": 0,
+    "SphereRotations": 0,
+    "WhitneyLayerMassFactor": 0,
+    "GraphExtensionUnitPairing": 0,
+    "GraphKnappUnitPairing": 0,
+    "GraphWhitneyLayerHigh": 0,
+    "OriginalCapContainsBall": 0,
+    "GraphWhitneyPairRestricted": 0,
+    "SphereFiniteCover": 0,
+    "GraphRestrictedKnappSummation": 0,
+    "GraphRestrictedKnappHigh": 0,
+    "OriginalSmallCapBound": 0,
+    "GraphRestrictedKnapp": 0,
+    "OriginalSphereFromGraph": 0,
+    "KnappGraphToOriginal": 0,
+    "KnappAtomPairing": 0,
+    "SphericalGraphKnappPairing": 0,
+    "JSP001040Main": 0,
+    "JSP001040CatalogStatement": 0
+  },
+  "new_theorems_audited": [
+    "RestrictionWork.measurableSet_dyadic_amplitude_set",
+    "RestrictionWork.pairwise_disjoint_dyadic_amplitude_set",
+    "RestrictionWork.measurable_dyadic_amplitude_piece",
+    "RestrictionWork.norm_dyadic_amplitude_piece_le",
+    "RestrictionWork.dyadic_amplitude_sum_eq_indicator",
+    "RestrictionWork.measurable_dyadic_amplitude_trunc",
+    "RestrictionWork.norm_dyadic_amplitude_trunc_le",
+    "RestrictionWork.tendsto_dyadic_amplitude_trunc",
+    "RestrictionWork.dyadic_amplitude_mass_sum_le",
+    "RestrictionWork.dyadic_exponential_kernel_sum_le",
+    "RestrictionWork.dyadic_pairing_exponent_on_line",
+    "RestrictionWork.card_dyadic_whitney_left_fiber_le",
+    "RestrictionWork.card_dyadic_whitney_right_fiber_le",
+    "RestrictionWork.dyadic_whitney_mass_prod_le",
+    "RestrictionWork.dyadic_whitney_mass_sum_le",
+    "RestrictionWork.volume_dyadic_parameter_cell_at_whitney_level",
+    "RestrictionWork.dyadic_whitney_mass_le",
+    "RestrictionWork.dyadic_whitney_mass_tsum_le",
+    "RestrictionWork.dyadic_whitney_pair_distance_ge",
+    "RestrictionWork.dyadic_whitney_pair_localize",
+    "RestrictionWork.graph_extension_norm_le_integral_norm",
+    "RestrictionWork.graph_extension_const_mul",
+    "RestrictionWork.graph_extension_congr_ae",
+    "RestrictionWork.graph_extension_finsetSum",
+    "RestrictionWork.graph_extension_tendsto_of_dominated",
+    "RestrictionWork.graph_extension_pairing_tendsto",
+    "RestrictionWork.graph_extension_pairing_finset_le",
+    "RestrictionWork.restricted_graph_data",
+    "RestrictionWork.graph_extension_enorm_le_restricted_mass",
+    "RestrictionWork.measurableSet_originalSmallCap",
+    "RestrictionWork.original_cap_reverse",
+    "RestrictionWork.weighted_matrix_rpow_sum_le",
+    "RestrictionWork.weighted_matrix_rpow_sum_le_of_normalized",
+    "RestrictionWork.exists_restricted_strong_nearby",
+    "RestrictionWork.sphere_isometry_isometry",
+    "RestrictionWork.sphere_isometry_measurePreserving",
+    "RestrictionWork.extension_comp_sphereIsometry",
+    "RestrictionWork.eLpNorm_extension_comp_sphereIsometry",
+    "RestrictionWork.exists_sphere_isometry_apply",
+    "RestrictionWork.whitney_layer_mass_factor",
+    "RestrictionWork.graph_extension_le_of_unit_pairing",
+    "RestrictionWork.graph_knapp_unit_pairing_from_atoms",
+    "RestrictionWork.graph_whitney_layer_eLpNorm_two_sq",
+    "RestrictionWork.graph_whitney_layer_eLpNorm",
+    "RestrictionWork.graph_extension_product_eLpNorm_top_le_mass",
+    "RestrictionWork.original_small_cap_contains_ball",
+    "RestrictionWork.norm_cell_indicator_le",
+    "RestrictionWork.spherical_graph_whitney_term_bound",
+    "RestrictionWork.boundedSphereExtension_of_ball_bound",
+    "RestrictionWork.spherical_graph_restricted_knapp_at_le_two",
+    "RestrictionWork.spherical_graph_restricted_knapp_below_half",
+    "RestrictionWork.original_small_cap_bound_of_graph",
+    "RestrictionWork.spherical_graph_restricted_knapp",
+    "RestrictionWork.spherical_graph_restricted_knapp_linear",
+    "RestrictionWork.boundedSphereExtension_of_quarter_graph",
+    "RestrictionWork.finiteKnappBoundary_of_quarter_graph",
+    "RestrictionWork.admissible_finite_knapp_reparam",
+    "RestrictionWork.fullSphereRestriction_of_graph_strong",
+    "RestrictionWork.knapp_dyadic_pair_decay",
+    "RestrictionWork.spherical_graph_knapp_atom_pairing_le",
+    "RestrictionWork.spherical_graph_knapp_unit_pairing",
+    "RestrictionWork.spherical_graph_knapp_strong",
+    "RestrictionWork.fullSphereRestrictionConjecture",
+    "RestrictionWork.finiteKnappBoundarySufficiency",
+    "RestrictionWork.jsp001040_catalog_statement"
+  ],
+  "new_definitions_audited": [
+    "RestrictionWork.dyadicAmplitudeSet",
+    "RestrictionWork.dyadicAmplitudePiece",
+    "RestrictionWork.dyadicAmplitudeTrunc",
+    "RestrictionWork.dyadicWhitneyMass",
+    "RestrictionWork.SphericalGraphRestrictedKnapp",
+    "RestrictionWork.originalSmallCap",
+    "RestrictionWork.sphereIsometry"
+  ],
+  "reused_declarations_audited": [
+    "RestrictionWork.original_target_iff_finite_knapp",
+    "RestrictionWork.original_sphere_necessity",
+    "RestrictionWork.strict_admissible_sufficiency",
+    "RestrictionWork.extension_top_bound",
+    "RestrictionWork.graph_extension_whitney_hasSum",
+    "RestrictionWork.whitney_dyadic_mass_sum",
+    "RestrictionWork.shifted_graph_whitney_pair_bound",
+    "RestrictionWork.graph_whitney_layer_eLpNorm_lt_two",
+    "RestrictionWork.eLpNorm_reciprocal_interpolate",
+    "OAI.Analysis.Fourier.BochnerRiesz.eLpNorm_le_of_integral_mul_bound"
+  ],
+  "full_type_and_axiom_audit_exit_code": 0,
+  "kernel_replay_exit_codes": {
+    "RestrictionWork.DyadicAmplitudeApprox": 0,
+    "RestrictionWork.DyadicExponentialKernel": 0,
+    "RestrictionWork.DyadicWhitneyMass": 0,
+    "RestrictionWork.DyadicWhitneyPairLocalize": 0,
+    "RestrictionWork.GraphExtensionPairingLimits": 0,
+    "RestrictionWork.GraphRestrictedKnappData": 0,
+    "RestrictionWork.OriginalCapReverse": 0,
+    "RestrictionWork.RestrictedStrongMatrix": 0,
+    "RestrictionWork.RestrictedStrongNeighborhood": 0,
+    "RestrictionWork.SphereRotations": 0,
+    "RestrictionWork.WhitneyLayerMassFactor": 0,
+    "RestrictionWork.GraphExtensionUnitPairing": 0,
+    "RestrictionWork.GraphKnappUnitPairing": 0,
+    "RestrictionWork.GraphWhitneyLayerHigh": 0,
+    "RestrictionWork.OriginalCapContainsBall": 0,
+    "RestrictionWork.GraphWhitneyPairRestricted": 0,
+    "RestrictionWork.SphereFiniteCover": 0,
+    "RestrictionWork.GraphRestrictedKnappSummation": 0,
+    "RestrictionWork.GraphRestrictedKnappHigh": 0,
+    "RestrictionWork.OriginalSmallCapBound": 0,
+    "RestrictionWork.GraphRestrictedKnapp": 0,
+    "RestrictionWork.OriginalSphereFromGraph": 0,
+    "RestrictionWork.KnappGraphToOriginal": 0,
+    "RestrictionWork.KnappAtomPairing": 0,
+    "RestrictionWork.SphericalGraphKnappPairing": 0,
+    "RestrictionWork.JSP001040Main": 0,
+    "RestrictionWork.JSP001040CatalogStatement": 0,
+    "RestrictionWork.OriginalTargetFiniteKnapp": 0,
+    "RestrictionWork.OriginalSphereNecessity": 0,
+    "RestrictionWork.StrictAdmissibleSufficiency": 0,
+    "RestrictionWork.ShiftedGraphRestrictedRescale": 0,
+    "RestrictionWork.GraphWhitneySummation": 0,
+    "GlobalMixedExtension": 0,
+    "GlobalDiagonalExtension": 0
+  },
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "transitive_axioms": {
+    "RestrictionWork.dyadicAmplitudeSet": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.dyadicAmplitudePiece": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.dyadicAmplitudeTrunc": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.measurableSet_dyadic_amplitude_set": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.pairwise_disjoint_dyadic_amplitude_set": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.measurable_dyadic_amplitude_piece": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.norm_dyadic_amplitude_piece_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.dyadic_amplitude_sum_eq_indicator": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.measurable_dyadic_amplitude_trunc": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.norm_dyadic_amplitude_trunc_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.tendsto_dyadic_amplitude_trunc": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.dyadic_amplitude_mass_sum_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.dyadic_exponential_kernel_sum_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.dyadic_pairing_exponent_on_line": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.card_dyadic_whitney_left_fiber_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.card_dyadic_whitney_right_fiber_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.dyadicWhitneyMass": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.dyadic_whitney_mass_prod_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.dyadic_whitney_mass_sum_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.volume_dyadic_parameter_cell_at_whitney_level": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.dyadic_whitney_mass_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.dyadic_whitney_mass_tsum_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.dyadic_whitney_pair_distance_ge": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.dyadic_whitney_pair_localize": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_extension_norm_le_integral_norm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_extension_const_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_extension_congr_ae": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_extension_finsetSum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_extension_tendsto_of_dominated": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_extension_pairing_tendsto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_extension_pairing_finset_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.SphericalGraphRestrictedKnapp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.restricted_graph_data": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_extension_enorm_le_restricted_mass": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.originalSmallCap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.measurableSet_originalSmallCap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.original_cap_reverse": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.weighted_matrix_rpow_sum_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.weighted_matrix_rpow_sum_le_of_normalized": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.exists_restricted_strong_nearby": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.sphereIsometry": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.sphere_isometry_isometry": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.sphere_isometry_measurePreserving": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.extension_comp_sphereIsometry": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.eLpNorm_extension_comp_sphereIsometry": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.exists_sphere_isometry_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.whitney_layer_mass_factor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_extension_le_of_unit_pairing": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_knapp_unit_pairing_from_atoms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_whitney_layer_eLpNorm_two_sq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_whitney_layer_eLpNorm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_extension_product_eLpNorm_top_le_mass": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.original_small_cap_contains_ball": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.norm_cell_indicator_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.spherical_graph_whitney_term_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.boundedSphereExtension_of_ball_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.spherical_graph_restricted_knapp_at_le_two": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.spherical_graph_restricted_knapp_below_half": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.original_small_cap_bound_of_graph": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.spherical_graph_restricted_knapp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.spherical_graph_restricted_knapp_linear": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.boundedSphereExtension_of_quarter_graph": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.finiteKnappBoundary_of_quarter_graph": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.admissible_finite_knapp_reparam": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.fullSphereRestriction_of_graph_strong": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.knapp_dyadic_pair_decay": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.spherical_graph_knapp_atom_pairing_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.spherical_graph_knapp_unit_pairing": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.spherical_graph_knapp_strong": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.fullSphereRestrictionConjecture": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.finiteKnappBoundarySufficiency": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.jsp001040_catalog_statement": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.original_target_iff_finite_knapp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.original_sphere_necessity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.strict_admissible_sufficiency": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.extension_top_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_extension_whitney_hasSum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.whitney_dyadic_mass_sum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.shifted_graph_whitney_pair_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.graph_whitney_layer_eLpNorm_lt_two": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RestrictionWork.eLpNorm_reciprocal_interpolate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OAI.Analysis.Fourier.BochnerRiesz.eLpNorm_le_of_integral_mul_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "source_files_scanned": 2345,
+  "forbidden_code_hits": [],
+  "new_axioms": false,
+  "transverse_restricted_exponent_neighborhood_accepted": true,
+  "whitney_actual_spherical_pair_bound_accepted": true,
+  "dyadic_whitney_unique_layer_and_cells_accepted": true,
+  "whitney_scalar_dyadic_mass_summation_accepted": true,
+  "whitney_operator_product_expansion_accepted": true,
+  "whitney_frequency_support_and_enlarged_overlap_accepted": true,
+  "whitney_smooth_cutoff_and_reproduction_accepted": true,
+  "whitney_operator_L2_almost_orthogonality_accepted": true,
+  "whitney_operator_one_lt_R_lt_two_almost_orthogonality_accepted": true,
+  "whitney_operator_minkowski_sum_accepted": true,
+  "whitney_full_range_summation_exponent_accepted": true,
+  "whitney_summation_for_actual_graph_accepted": true,
+  "restricted_exact_knapp_all_finite_outputs_accepted": true,
+  "restricted_to_strong_exact_knapp_accepted": true,
+  "original_sphere_finite_cover_accepted": true,
+  "allowed_finite_knapp_equality_accepted": true,
+  "original_problem_proved": true,
+  "original_target_theorem": "RestrictionWork.fullSphereRestrictionConjecture",
+  "boundary_theorem": "RestrictionWork.finiteKnappBoundarySufficiency",
+  "remaining_propositions": [],
+  "files": {
+    "RestrictionWork/DyadicAmplitudeApprox.lean": {
+      "source_sha256": "630ad5dbb3c12fd1c0e0f6b3391ff35a558f9faa634d88d4f806bd0559da9b21",
+      "olean_sha256": "1b43e857c71288a33d024dae99296cff5f7dbcbbc0bdc4726d2e42490fd740fa"
+    },
+    "RestrictionWork/DyadicExponentialKernel.lean": {
+      "source_sha256": "112d97dc379978b16b5dd98a188f8854ca520f9f83369262e9de057dc5e57618",
+      "olean_sha256": "906588d2571d31a54cbe3d49cb90512f7d1f9b9ae0456a2fb07dbb805ad1a16e"
+    },
+    "RestrictionWork/DyadicWhitneyMass.lean": {
+      "source_sha256": "ba97464e7433893a874aadfd20b419528bca12024608fa6f83e228776f619021",
+      "olean_sha256": "b0a61bb73d082091738c7b4bc24489a89bacd15da2fe77bd0cf5226edca89aaf"
+    },
+    "RestrictionWork/DyadicWhitneyPairLocalize.lean": {
+      "source_sha256": "aff6b4c370d73c6bf55c9db9dfb30c3a9805039accde799d750461776a3d565c",
+      "olean_sha256": "0c6cac86035a2c8e80301f4b313ebee4610c9ab71c96eba101e7fe1d7a55ef70"
+    },
+    "RestrictionWork/GraphExtensionPairingLimits.lean": {
+      "source_sha256": "a115f09486bcc9638539868d53ba2d8f638afbb961438191d60d4bf72773953f",
+      "olean_sha256": "11cddc720ee51895bd97ea1af6a506d6a3a948a29504552e5229c97b28b0e884"
+    },
+    "RestrictionWork/GraphRestrictedKnappData.lean": {
+      "source_sha256": "c9d8eee0c6d664367ff0f2ea8121a3cde520e5893d34e50a557d6feaa8a4d3ba",
+      "olean_sha256": "31c4f938ef17cf9ef4df04e132c878dc820855128fbcc441898c04e8d60a4dd8"
+    },
+    "RestrictionWork/OriginalCapReverse.lean": {
+      "source_sha256": "a332fd2168bf31b89ef35f14f8be600de5959f0d0c3bf2ac8de812ff95144217",
+      "olean_sha256": "652f948a98f7616322760af1d0959ef6185b45bb26fda12f332692429aa09c9f"
+    },
+    "RestrictionWork/RestrictedStrongMatrix.lean": {
+      "source_sha256": "7cbfdadfeb7b650c8558399b6dbae428317558455e27106caa2ca6f3428f6ba1",
+      "olean_sha256": "1b0352a6834ab0ee0bd515b4cea263da4b012838ddab971e8d3f197be66dd449"
+    },
+    "RestrictionWork/RestrictedStrongNeighborhood.lean": {
+      "source_sha256": "cdc8e53847063d9f9c97e4cff389a5cee22dbbb5e88db433a252564c7465db1b",
+      "olean_sha256": "b052763bb320422caf8e38fc67237fa3dac10e99cf50fdfaf21b450f7b00d1d9"
+    },
+    "RestrictionWork/SphereRotations.lean": {
+      "source_sha256": "4c813961fd0d84c8a9422b51007b118af6d342e1e6d74516a0fbfdd7891e6810",
+      "olean_sha256": "adfb5c79a65584959562fcfb9f12d50df4927c211020298b0fea7affd251c58d"
+    },
+    "RestrictionWork/WhitneyLayerMassFactor.lean": {
+      "source_sha256": "f10df19d8f5f617cce9a2ff4b9f78f59bca2730041d94dada39ba16bc4209ad6",
+      "olean_sha256": "9a6c7317828527d2b4611bf5e3f3fcb86175cde08cb800fd1207c268ab710f8b"
+    },
+    "RestrictionWork/GraphExtensionUnitPairing.lean": {
+      "source_sha256": "96ff277887ef1edd6b1427cc4426e85130736f9a92641313ef80e09ef8e727aa",
+      "olean_sha256": "b0dd0bcd201d238289b890917c4321daa88426489d13a823da7cd0a99fdbfe4a"
+    },
+    "RestrictionWork/GraphKnappUnitPairing.lean": {
+      "source_sha256": "f2ee57b4e2d08d70f33d4a87cacc4b49f3e57913116980ae631752f7e4ec7f13",
+      "olean_sha256": "827fc53590f414485250d41df6fb633de3f6d3ee697458d8d3f708529686a743"
+    },
+    "RestrictionWork/GraphWhitneyLayerHigh.lean": {
+      "source_sha256": "16239757db43fbe01964626a5f73f4fd486bca71bee6f1c70ad4a1d0a6f66258",
+      "olean_sha256": "0d73004a0cc913862bd474b551212b8d2030b1ff4c15adaf9e28fa3baebb7a7a"
+    },
+    "RestrictionWork/OriginalCapContainsBall.lean": {
+      "source_sha256": "2ed35fc2daaeeba28ac4636cebd0c96698876cf9608c9da9a236d3266fa8c79a",
+      "olean_sha256": "19748fe269e809ff3ad15be163b77baa16cebac3c942fc9e39f5f48b5cb4a23c"
+    },
+    "RestrictionWork/GraphWhitneyPairRestricted.lean": {
+      "source_sha256": "8ce380ec5b726317b9278d8c42521b86270100051a472955c6a381719f281a71",
+      "olean_sha256": "ff611e93e926ab26a57f4236659a5ffe4b6441e0d22e903b0779f1956b1b8d35"
+    },
+    "RestrictionWork/SphereFiniteCover.lean": {
+      "source_sha256": "f7d42667834932db66904d4878ecf7dfa89d95e63e89aa26b13a752fb73af1d9",
+      "olean_sha256": "446fd7da37f09b57fd446947952247bd24a55948c439c798071e11342977c76d"
+    },
+    "RestrictionWork/GraphRestrictedKnappSummation.lean": {
+      "source_sha256": "436593988274ace5a4ac06b8c855b32ac636d4e16030086007f20d8326a8db37",
+      "olean_sha256": "b38e6f4351d32176796840b821cba8ebd7121372f87276bc3a29e57273f373e5"
+    },
+    "RestrictionWork/GraphRestrictedKnappHigh.lean": {
+      "source_sha256": "ded2a788c845b25fef74798c132a7ef2adae126a92a88abfed848cf4d6414170",
+      "olean_sha256": "a98738d78966cf076783a531cba60405b1d5cba6bc463027a74d87deac27ba96"
+    },
+    "RestrictionWork/OriginalSmallCapBound.lean": {
+      "source_sha256": "87730b43abcc65a09c8536847539e01960df8904c4ad7d86b4fb01a75ea1725c",
+      "olean_sha256": "ba00dc351ec8a30c7c706008dee32d5f652021b9ef3028e28ba88f79c90d0792"
+    },
+    "RestrictionWork/GraphRestrictedKnapp.lean": {
+      "source_sha256": "1c3a6c0ada0800ed1b5bda8d06444af9beae9eb8d93f4d4466bebace9c329d3b",
+      "olean_sha256": "3a6d2b546a0f705057c75dcb7e09dab017920dcf4df3088dacf34a276d3ac7d6"
+    },
+    "RestrictionWork/OriginalSphereFromGraph.lean": {
+      "source_sha256": "d0da489b3dd1e420d87267a44fda6469e8e40a06cad68dcb631cb0a5082f6628",
+      "olean_sha256": "7bf897b7588070ac5bc1c0582612f88f2bef7e40afd3f4e98acdec1cb14f8a57"
+    },
+    "RestrictionWork/KnappGraphToOriginal.lean": {
+      "source_sha256": "8ea677fc5674c83ea0ad2a46029d76393740362ed0481ceb9708dcac88685752",
+      "olean_sha256": "30b96d12b4befc978abdcbdb0344ec5320a5487c10f63c8c60f63cc4b0df6afa"
+    },
+    "RestrictionWork/KnappAtomPairing.lean": {
+      "source_sha256": "f5cc9a0484e0bef881dc00f2bf72a807f8daae2c339664401cf95d1afe8a5d3e",
+      "olean_sha256": "84e9351c300ba07871f1d934b505f8093b9e45ee277523d4e6f94044cc37978c"
+    },
+    "RestrictionWork/SphericalGraphKnappPairing.lean": {
+      "source_sha256": "70aa4bfbf0f8f1464d9d7fd07306471b3b7def80a9de8e3d4e629b90bd9b264a",
+      "olean_sha256": "be4c8684a07f65a6c5ecd5be6d46342435366106827a0e130c1d08a7967c9f8b"
+    },
+    "RestrictionWork/JSP001040Main.lean": {
+      "source_sha256": "e2687743cb8c55bc7f78e186bd96531a9151b6155eeafbe6badbfa4a353c9f3e",
+      "olean_sha256": "0e8f38e872d86b6d87f4d5daa01af2457cf6a7f5d8ec671a8887278fbbacdb43"
+    },
+    "RestrictionWork/JSP001040CatalogStatement.lean": {
+      "source_sha256": "9c73397cc2cf5badec8f93d2bff2f25e8a9279366c452ed90e058022a2a3c414",
+      "olean_sha256": "b5e46ad1eec9f8061f49170371ee14fde3cb562781eba8f870be4aa308cb21fc"
+    }
+  },
+  "audit_sha256": "169146de7c1640a979f0a6ecd80c3b7fedff795cd7d286d4dd9e5ca6f2b1f2d6"
+}

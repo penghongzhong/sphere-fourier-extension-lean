@@ -1,0 +1,583 @@
+{
+  "repository": "openai/math",
+  "commit": "4eaee87548250b2682affda7d05d947c05554bae",
+  "entrypoints": [
+    "OAI.Analysis.Fourier.Restriction.Sparse.Bound",
+    "OAI.Analysis.Fourier.Restriction.Extension",
+    "OAI.Analysis.Fourier.Restriction.Diagonal"
+  ],
+  "lean": "4.34.1",
+  "mathlib": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "module_count": 81,
+  "baseline_modules": 2044,
+  "variant": "imports_only_same_proof_bodies",
+  "files": [
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Average.lean",
+      "github_blob_sha": "e26e57bbc0db11d16ca90a7a5a298d25eb0c8b8c",
+      "sha256": "74e517166995d8e8bfce19d03ab9d9c4fddaf22c944e32520ba670f97b223cb5",
+      "bytes": 2014,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Average.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/BallAverage.lean",
+      "github_blob_sha": "ce5a40cf196cf92242ecc485a6c07963ee283d50",
+      "sha256": "6eb037cfeae2aa78acbeef8a4b73f76c45336232c289e52c4444c9b57be1634f",
+      "bytes": 3213,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/BallAverage.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/BallCover.lean",
+      "github_blob_sha": "e86ef36385afead5a7729efb4210508ebb5e9c98",
+      "sha256": "2c3c105c42b9d032874618fc6e71221681aab816ecdf101e5b8693806a1bd5d0",
+      "bytes": 2747,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/BallCover.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/BandPowers.lean",
+      "github_blob_sha": "1d351ea16a1653d01985456f77d89fe240e3709e",
+      "sha256": "08fc5e3bc4acbb896188323773d66dcf6bde930a5d7a3f75f94d50992022c92c",
+      "bytes": 1593,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/BandPowers.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/BoundedInput.lean",
+      "github_blob_sha": "94dc47299cc9a0ffe89d4bfc7eccf6c46978ad05",
+      "sha256": "a9fa45f36953e1b55f39ad9ccb7d664b4d4c79501a3d69f20fd4b95258ae254d",
+      "bytes": 5195,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/BoundedInput.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/BoundedPhases.lean",
+      "github_blob_sha": "c30943b470cdf490b45d76a9c33d3d84c9d584f5",
+      "sha256": "c83e4cd0b5ade0e35c44aef494657367b09b31d556aa5d96bab643d145a8d293",
+      "bytes": 3976,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/BoundedPhases.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Branching.lean",
+      "github_blob_sha": "eb2511ac7c0e91d92b0b1693b0df0430446e17f5",
+      "sha256": "44928f634e08821928da86a6ab376b71a5d2d5ce73d8a0715e6e518350f3d7b0",
+      "bytes": 1510,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Branching.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/BumpBounds.lean",
+      "github_blob_sha": "4c0d417448b8f2f881e0871d6ec93f3a68f771d6",
+      "sha256": "6a937dee18dd7092b2be1165a15319b559dd4dfb5bb49872647079720271c07e",
+      "bytes": 3277,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/BumpBounds.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/BumpDecay.lean",
+      "github_blob_sha": "292675d55d86cadc72042eacdb97663c1895729d",
+      "sha256": "2f4bcd1e65ac605559b0ab23729e3987584cdd48efb7d9c5dde189e167c33b34",
+      "bytes": 2191,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/BumpDecay.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Bumps.lean",
+      "github_blob_sha": "b167f969ac4defeb34af0a4252478ef2dd0569f3",
+      "sha256": "f60f61d4b157997333972aa0e0cc5d05d3d0bf6d9964247188935f5c3485bda6",
+      "bytes": 4609,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Bumps.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Cell.lean",
+      "github_blob_sha": "8bf4fb769670f1ab7fb61759f97e904a90bde783",
+      "sha256": "2a84584baf7497270043805c39171fd645abaa6f5b2543fd04d81411a1c52682",
+      "bytes": 1361,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Cell.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/CellSeries.lean",
+      "github_blob_sha": "b8f2978de8dfc1520ad4036648378f8f41758e90",
+      "sha256": "7698b182375ddb4ae50d05fb8270ffc09c75abf1077e799a2105918c8c39dac2",
+      "bytes": 1568,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/CellSeries.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Coloring.lean",
+      "github_blob_sha": "4804ba2cef03b8c1d365653f77f3053db85fe7dd",
+      "sha256": "0e23d2a1e4441783d13ce57bda2ac49b90199cb34fab93328a9f6602ba66d111",
+      "bytes": 3294,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Coloring.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/CoverPowers.lean",
+      "github_blob_sha": "9e2ed3d3229067dc569391985d3dfa9bfc2d4e05",
+      "sha256": "b3a0b5feac0f975bbbad80565c4b0723a7da2bdeb4fefbf0e81b007ed1816c76",
+      "bytes": 2028,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/CoverPowers.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/DensityLayers.lean",
+      "github_blob_sha": "1fbdcb84f17b55c5bec8b22cb0a5c9644c0f1bfb",
+      "sha256": "86618a832a60687c035e32901d4e3a7e6dd67c36933fc20440534610e547628b",
+      "bytes": 1822,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/DensityLayers.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Diagonal.lean",
+      "github_blob_sha": "7139e65b3c792388da5490dddd681a2d6e8472ea",
+      "sha256": "f5cf3c132f48d8e58609cd3e1647f99d6f193f218fb5f335d649efe65a363c8e",
+      "bytes": 2674,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Diagonal.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/DiscreteEpsilon.lean",
+      "github_blob_sha": "ba0aae7a21db1f11c39e7a838a197c8da8bba09e",
+      "sha256": "e12f9e8afa1e9b9b76281f978a7bb3d2f87807416cf8d3c6be923e32daf7b604",
+      "bytes": 2124,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/DiscreteEpsilon.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/DualNorm.lean",
+      "github_blob_sha": "abcfc06e6565c75a23fc4cc1bbb9fd060a13d4f4",
+      "sha256": "67d3f8d1fe7bbc70c680dcfb5624839f8b70db20bbf2e62d7b9b6c38e02ed7cf",
+      "bytes": 3106,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/DualNorm.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/DyadicAmplitude.lean",
+      "github_blob_sha": "a6fb2d61a402cdbac0a6cc0cd55844d0235f611b",
+      "sha256": "da0331d5052c38365d4d35ce5c66aa1a8e52be6b410777a5d51c9d43999dbe0d",
+      "bytes": 3883,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/DyadicAmplitude.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/EpsilonRemoval.lean",
+      "github_blob_sha": "423f582d3785a237a4256aaecd04d8f08c068cf5",
+      "sha256": "60ddd2024c44483d468a0e6bb3d6fa94c85ef2a8ec40ee43eee5f31a0fcedd41",
+      "bytes": 1595,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/EpsilonRemoval.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Extension.lean",
+      "github_blob_sha": "6df64f8d0ea8ec59925326025e0a4d2aa919574a",
+      "sha256": "4b08306bdcb1d8a653cda236f9a3f7d6b8ba40785ad2f6226ff0794175414243",
+      "bytes": 4289,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Extension.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/FiniteCover.lean",
+      "github_blob_sha": "9fdb5f600581b263b2ece9f4d776f1f2db3d22b9",
+      "sha256": "ee092e84c4ccd9f5d028c45a9a5279174dd4df80e79ecacabd125f1872f296b2",
+      "bytes": 3698,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/FiniteCover.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/FiniteFourier.lean",
+      "github_blob_sha": "741f5f3b4cc00f6431cd8a7a885c0eb964fa3704",
+      "sha256": "0ec88e564be359469e17938d3e8bc50b01bd9d12015b766b1931f66af0a0604b",
+      "bytes": 2160,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/FiniteFourier.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/FiniteLp.lean",
+      "github_blob_sha": "f2582d1df254545856f0b823ebcc7d5cde9989ff",
+      "sha256": "cdb3c8dd4d4798dae292368e00be79cad3c344a61fbad5d24ab7292b3c87ee3d",
+      "bytes": 2140,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/FiniteLp.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/FiniteMoments.lean",
+      "github_blob_sha": "1934594fb79fbb99c97fee8f2683ca745d82aa0f",
+      "sha256": "14123d747c29f24b58a5c460220caba781a269928dbb7ba69e699afa8a79090f",
+      "bytes": 1565,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/FiniteMoments.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/FiniteNet.lean",
+      "github_blob_sha": "a77c4739d635cec3238da21a5a9309727997c88a",
+      "sha256": "8451695caed91c1627cca27641aa93aa2e608a3524fcdcb3912c5a45ce02d90b",
+      "bytes": 1894,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/FiniteNet.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/GramKernel.lean",
+      "github_blob_sha": "7eccaeb8554d969aba6b320b9a010a07fd8e9902",
+      "sha256": "ff04928ab4d113c36a24bf87865cf6b077f86b2d95690423ff3e27328f72c262",
+      "bytes": 4386,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/GramKernel.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/GramMass.lean",
+      "github_blob_sha": "5374adf0aa030baf722bb3d024cfe61a83bd89c3",
+      "sha256": "5bec5882066d47d8bb05e664ac8d234edfe43eefa58e43c985cd6f2cab2d5692",
+      "bytes": 1653,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/GramMass.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/IntegralKernel.lean",
+      "github_blob_sha": "f15a67b4627f01a80e3a0f6c8964db4bc934caa4",
+      "sha256": "b0ddf254ca5bff4e6408c7b49965e1ea0b26100a27f868f74f7f53115fd8af40",
+      "bytes": 3586,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/IntegralKernel.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/KernelL2.lean",
+      "github_blob_sha": "8c415d4e1f6d1b16c45e5b193f52f7bb96143e4b",
+      "sha256": "dcf25900a8ffdec53a0440fbd7f2e81f4e51622d152a5871b1650675b623ca5f",
+      "bytes": 4257,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/KernelL2.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/KernelLp.lean",
+      "github_blob_sha": "e9fcf4c533606fd2f3311817078f9deea3e183b9",
+      "sha256": "41988ee257075ef4d42e5ebf498d85681837be38253d5ae23f4bffce759163ea",
+      "bytes": 1605,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/KernelLp.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Lattice.lean",
+      "github_blob_sha": "a42ac2e2f54abf6b1a580ea68df828adb26b7f05",
+      "sha256": "816853b0485558383566f8d82ea66279a83cbd0e7cb22c4ff64f214552c1be5f",
+      "bytes": 1842,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Lattice.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/LatticeAverage.lean",
+      "github_blob_sha": "df229bffe5aab8c2513d54a47a286f3e91177e35",
+      "sha256": "aeeb2d5b050cbea372c0aba8757ae5531d74f424e8437fc90165f7a8d368680a",
+      "bytes": 5493,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/LatticeAverage.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/LatticeBound.lean",
+      "github_blob_sha": "f134009b04c6cda4f469ad63085e081844e76d5d",
+      "sha256": "43f757c3a1b4ed561b3a56218d816e503e751a4dafcccf24b565c505421cd2ee",
+      "bytes": 2408,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/LatticeBound.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/LatticeBoxes.lean",
+      "github_blob_sha": "c35c0083c881284792b7125548a86fa1653129f1",
+      "sha256": "4acf492fcae8eb73e720e8e1909f20707a011905fd927befc7c340787dff282d",
+      "bytes": 1670,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/LatticeBoxes.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/LatticeExponent.lean",
+      "github_blob_sha": "3f8923bfbaf6fc1f9bc3ce1b20d5635c3fee581e",
+      "sha256": "aeda8d6b5f548388a9f1ac93fba369f733ae73c91bf85815b6b48d7637e43b4a",
+      "bytes": 1893,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/LatticeExponent.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/LatticeLimit.lean",
+      "github_blob_sha": "d6d81fec681be2c8c3993f4d07e95256f9255a0f",
+      "sha256": "ecccc17b9c08bbba6a1d71a5aff929945db10d46d4b201da036f85d3347b0296",
+      "bytes": 4318,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/LatticeLimit.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Mixed.lean",
+      "github_blob_sha": "6531b213666f9d148ba882bd8e490352e3ae4c3f",
+      "sha256": "9fc03b439b1b1c6cdc9c37dd4d5405a793ba333408eecc79a28bd8e86292ad0f",
+      "bytes": 5817,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Mixed.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/MixedNormalized.lean",
+      "github_blob_sha": "e58354efed6794d44bade2c2fcd6bf9f62d27b4b",
+      "sha256": "d46e838d5251406c6fa34b2d6a2895fee1c869b9b98b46f19c608b49fa130f86",
+      "bytes": 4473,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/MixedNormalized.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/MixedPowers.lean",
+      "github_blob_sha": "b93b4d7a4fb5944c1cd3a04ce5af9193485ec473",
+      "sha256": "918eaf566b0d2b4d40ad6eb319d748d3a092caff9ceef7b10cc9dd18add2d066",
+      "bytes": 1137,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/MixedPowers.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/MixedRange.lean",
+      "github_blob_sha": "e75a1bf2dee1d5b6e8a4f94cf714bfa3427a756d",
+      "sha256": "13d38359a0aacc2b69f72b1f3b265143b9e8914133bac7f0cab7ffc87c9789c2",
+      "bytes": 4426,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/MixedRange.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Neighborhood.lean",
+      "github_blob_sha": "63384f848b90a57c45f9b362c7da35243dbbca3b",
+      "sha256": "65a0ae7f7b74b3a7846c727f6c21f82f94d28fc0359d150136d844a12fa78a1a",
+      "bytes": 2424,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Neighborhood.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/PhaseBands.lean",
+      "github_blob_sha": "4bc2c30b7865f4e6288e83104e3d3631a873b713",
+      "sha256": "8301763e423e2b03dee6f3b555ad6f0ddfec15bfdd85b43c4431e414a8be23d4",
+      "bytes": 3212,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/PhaseBands.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/PhaseInterpolation.lean",
+      "github_blob_sha": "a78d51c5b69cfbf6b7438c951520254cf3c585fc",
+      "sha256": "a3a6005b4f74fad76e0b43408a246f605144ab49bb74be091a0636eb91b7cf22",
+      "bytes": 5587,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/PhaseInterpolation.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/PhaseStrong.lean",
+      "github_blob_sha": "85a0b687b1401c9e8a93462d2a0aa7b0c065e3ca",
+      "sha256": "f1c78ccbd8a87f8c2a5efccc4c7f3639491e01410c94ba2807f412c056c9b424",
+      "bytes": 3559,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/PhaseStrong.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/QuantitativeCover.lean",
+      "github_blob_sha": "650ec5cfc2100252448f4cecef6c4c800c9c7f99",
+      "sha256": "daf6781e4de6d6b47d727044f02a45d78e05b64467d650133770fd641fd36454",
+      "bytes": 1814,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/QuantitativeCover.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Schur.lean",
+      "github_blob_sha": "5a930ac79e4f44dbfb48f3c25c9c8cc728d4cc57",
+      "sha256": "c7f88bdce4f4df67f052baf9f5accfb58d9684eb0ece867dcd657fc90418b969",
+      "bytes": 4902,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Schur.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/SmoothInverse.lean",
+      "github_blob_sha": "973840eeb48081cc5b5b1f34ace5d5e05c210ef1",
+      "sha256": "4419f789a5b0cdc5833890ba59e5c3f854df92f1f8910a046696a5d3f9ea28de",
+      "bytes": 1380,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/SmoothInverse.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Annulus.lean",
+      "github_blob_sha": "d15410f4bb992c27621ee40f059c572d0f7faf97",
+      "sha256": "a1d939ee765bf6cefffaf33fcb3b9dcbdfb52e482e194286e545682349b1bea2",
+      "bytes": 2650,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Annulus.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Assembly.lean",
+      "github_blob_sha": "8f8bbd8c63c18dc793f0c57ecb6666a8771119f5",
+      "sha256": "e6730c41316986598e947c713fa7557d1405fb4a61f513b99c938f9aa65255c9",
+      "bytes": 4638,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Assembly.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Bound.lean",
+      "github_blob_sha": "efb2c5483ed32e4604671f67c3545a22453d1eab",
+      "sha256": "499f8d3684d3c48c8e980b60d21884ce1c830860940f99f471ac070a7ca3238d",
+      "bytes": 1990,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Bound.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Counting.lean",
+      "github_blob_sha": "c883d985cf87bdcc4f199e6d88cb6d8ac9128653",
+      "sha256": "1cb72136d8b6a5a56e886896edf3f6a8c109d4667f03cc51c6fe1497d2f7f53e",
+      "bytes": 3346,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Counting.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Cover.lean",
+      "github_blob_sha": "58c4462ee67d5aa9c79ab1ed6905807db04cd0ef",
+      "sha256": "71a76c4c4158bb8d2fc37799af8871ffb005bfe6a2d1641376c63535e972a89d",
+      "bytes": 2813,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Cover.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Cutoff.lean",
+      "github_blob_sha": "cda6c07638601cd5e604d9030babed8744b81193",
+      "sha256": "43a459f46d39d32276b3b214abe85fc99f16b8a22b32f2e79d70b2408995560c",
+      "bytes": 3138,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Cutoff.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Decay.lean",
+      "github_blob_sha": "ba6c82ad152083f262ce81eca6353e2eb5179bba",
+      "sha256": "698cd5585ed7d50ee1c54d8366049f79d07a22fbed8fe6efff9ee0dbe79dd5cc",
+      "bytes": 2223,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Decay.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/FromLocal.lean",
+      "github_blob_sha": "22dd7a863fb3f54641930029ee27bb009894e3b1",
+      "sha256": "abcfeadc14b2f61a0e583fd50bdaf824b138b59f3f9c8d05b44bc9f0f31028ce",
+      "bytes": 4578,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/FromLocal.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Gram.lean",
+      "github_blob_sha": "6d0aad23d9af641dc114bbd99bd3a6b91a3fb59e",
+      "sha256": "686ee8d56310c2e65cb26c42cec63a7a27ca95d2bad3dde718705cab692193e8",
+      "bytes": 4605,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Gram.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Identity.lean",
+      "github_blob_sha": "2c0029aa40818a6b10e3949d5966dc7547814502",
+      "sha256": "84ae9236b37ee9a9a559c9cec597f3fa871f0754e27778b50177a2f4fef95477",
+      "bytes": 3442,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Identity.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Index.lean",
+      "github_blob_sha": "9445485bd9dc3ac7f35e9873192e84df2181e4ac",
+      "sha256": "79635fda5e32a73572f4d65b08cfa07047329bdf592271487e469b747a6ea47e",
+      "bytes": 2998,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Index.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Input.lean",
+      "github_blob_sha": "34ff26679a10cd32ac2bbc0860313aeafdd2d3fc",
+      "sha256": "b69b9e7430bcc3b502078339f3bda15bd6570dbf2e848771111841a65224d385",
+      "bytes": 2632,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Input.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Kernel.lean",
+      "github_blob_sha": "4abf43e7eadb7495e5a5f091ffb4d502311b9bbd",
+      "sha256": "2fa5b48876d58b194e82b46869dabe0447ed884b34936889c98c7c3d8e0a819e",
+      "bytes": 4929,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Kernel.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/KernelMass.lean",
+      "github_blob_sha": "37c12460e7f10f65f17e2c9d01cc07d20e4d9a16",
+      "sha256": "5b2a988e857708531ff459844e2d0e667823cc0dfa21777bd5624a462b7af831",
+      "bytes": 5133,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/KernelMass.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Operator.lean",
+      "github_blob_sha": "02ad7b55136a7a2973c3174a2ecf58d8a1cb5db6",
+      "sha256": "6681d34bb1cfeb9d6781bffe6ace18ea4be904e8d9b155831e6e33356bbbb79e",
+      "bytes": 4020,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Operator.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Partition.lean",
+      "github_blob_sha": "f589ed4816b6a21ac6a6b393738b690eb89059ed",
+      "sha256": "67b79158027adaa0968c17cfcbce517bd9055fd4a4942e02f66637aead550b4b",
+      "bytes": 2907,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Partition.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/PartitionNorm.lean",
+      "github_blob_sha": "75d4a0311c82ff84dd6bafc5621632d522eb434c",
+      "sha256": "c148e78807a731c53070faa80bf24516d5167a032b472a6aab2fde4c4318cb0b",
+      "bytes": 2901,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/PartitionNorm.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/PieceNorm.lean",
+      "github_blob_sha": "60a37f13276e514325332e6a6b613533814560a0",
+      "sha256": "20f6b051e12d344134bc20832aa4a911f4de7812e57e4f191f7832fd45535505",
+      "bytes": 2918,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/PieceNorm.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Pieces.lean",
+      "github_blob_sha": "f34e4afeccb364ebd53ea8ac07b4c1d269d06d7a",
+      "sha256": "1ac4728b5c9df4bfb70eb1192c856d2bf9e1f5332aed4e1c69a429afb6b54856",
+      "bytes": 3275,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Pieces.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Reconstruction.lean",
+      "github_blob_sha": "2e0e3ce2c165213a493d154e417dd0900a3feac7",
+      "sha256": "6901fc516cde049f5a1356867fd0cf1682548fadffd42defdeb24ecdd4dc782c",
+      "bytes": 2467,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Reconstruction.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Sparse/Scales.lean",
+      "github_blob_sha": "dbac1d17c63f5c1096a21e49a495922684b43da6",
+      "sha256": "003e8f07e843e764e0cde0f659ac68885ba802e24b0f329e86eb1b5b4562c97a",
+      "bytes": 2276,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Sparse/Scales.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/SphereMass.lean",
+      "github_blob_sha": "39d80367dda10dce373cc647ba5cd767a676a8d7",
+      "sha256": "dbd0bc04fa2a699da69ce81a5109cf006f333eee70ff2400f39f2f65ce462017",
+      "bytes": 3433,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/SphereMass.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/Thickening.lean",
+      "github_blob_sha": "671488d29a8854f0ad4bc4185cd0c6462ee72615",
+      "sha256": "f26049756eb3fcff8145316a21eb9efc3815c12a244151c971ba8b5fad942c97",
+      "bytes": 1655,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/Thickening.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/ThinLocal.lean",
+      "github_blob_sha": "d13c7ca4d0ca63dc27aa70696b76a94fb5192f21",
+      "sha256": "d753ad79255428bbf4402e255a357bcb55b9f85e797b2d3ee4060b7b73df7e5f",
+      "bytes": 1792,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/ThinLocal.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/ThinNorm.lean",
+      "github_blob_sha": "05b3a167e9fca7366eb3b9e9bd432bd0b47f51b5",
+      "sha256": "bc61c8af7fd52c236870a109ad3f8eea33b695bd359561e53decc5fca11e0d0e",
+      "bytes": 2999,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/ThinNorm.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/ThinScale.lean",
+      "github_blob_sha": "6bb5f6d7fd8e55bac68acd6316de3363a9282c1f",
+      "sha256": "6dbe16bd47f8c8a4f8c467d9ab50f1544917fc4de66fcb430f8d2d39557b4e46",
+      "bytes": 2253,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/ThinScale.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/TruncationL1.lean",
+      "github_blob_sha": "d7e3e91c570a3c0567d73690c95b38e4a6b3007e",
+      "sha256": "d08c87d20aa269194173714a1e8a2f368ed458c03fd0fe6812c2cb3f2af2e5cf",
+      "bytes": 2612,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/TruncationL1.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/TruncationMoments.lean",
+      "github_blob_sha": "2eb8ef81edc56ce88f516d6be0327b782f3c8228",
+      "sha256": "8ffbdc64467ba205d24c54fd0cf2cc4d98791c5554a985c7804e1c873b4efedc",
+      "bytes": 2778,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/TruncationMoments.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/UnitBallLoss.lean",
+      "github_blob_sha": "06d7a163ef669c709db0a3accc9d5d3b29c66144",
+      "sha256": "4d7fe9d4a523f573dba373d1935e8754202ec8114056d6a9d6931fc275352334",
+      "bytes": 3042,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/UnitBallLoss.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/WeakMixed.lean",
+      "github_blob_sha": "9bdff2617b87fb95f23c79b7c56a41c6f3d02009",
+      "sha256": "e03f3b20a89d7f968cbee9399a7cb02bc3cdf63c0b0a27481f436e906f987863",
+      "bytes": 5858,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/WeakMixed.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/WeakMixedPower.lean",
+      "github_blob_sha": "976870f1de2988446b25f69e2506e49d8218bdb3",
+      "sha256": "95f08a6272c4d5587c80814adccc50978ed59f5608917a3220af8d2e6b457de8",
+      "bytes": 1923,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/WeakMixedPower.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/WeakStrong.lean",
+      "github_blob_sha": "714b7a2874f3410dd455b4e2d456828ed6eec227",
+      "sha256": "e0283caff2066a42a160d30bb31a8d1bcbccaa02606eb3ed5791e3879b211913",
+      "bytes": 2963,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/WeakStrong.lean"
+    },
+    {
+      "path": "OAI/Analysis/Fourier/Restriction/WeightedPhase.lean",
+      "github_blob_sha": "cbba4eb0244bd04d31b40c9a9e654b8efaad2a1a",
+      "sha256": "69318e519325daba216fd3d52e78af4cdce1adee9473bfb8e177cf95f6c77430",
+      "bytes": 1912,
+      "url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/OAI/Analysis/Fourier/Restriction/WeightedPhase.lean"
+    }
+  ]
+}

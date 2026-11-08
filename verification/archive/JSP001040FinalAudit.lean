@@ -1,0 +1,177 @@
+import RestrictionWork.JSP001040CatalogStatement
+
+set_option autoImplicit false
+set_option pp.all true
+
+#check @RestrictionWork.dyadicAmplitudeSet
+#print axioms RestrictionWork.dyadicAmplitudeSet
+#check @RestrictionWork.dyadicAmplitudePiece
+#print axioms RestrictionWork.dyadicAmplitudePiece
+#check @RestrictionWork.dyadicAmplitudeTrunc
+#print axioms RestrictionWork.dyadicAmplitudeTrunc
+#check @RestrictionWork.measurableSet_dyadic_amplitude_set
+#print axioms RestrictionWork.measurableSet_dyadic_amplitude_set
+#check @RestrictionWork.pairwise_disjoint_dyadic_amplitude_set
+#print axioms RestrictionWork.pairwise_disjoint_dyadic_amplitude_set
+#check @RestrictionWork.measurable_dyadic_amplitude_piece
+#print axioms RestrictionWork.measurable_dyadic_amplitude_piece
+#check @RestrictionWork.norm_dyadic_amplitude_piece_le
+#print axioms RestrictionWork.norm_dyadic_amplitude_piece_le
+#check @RestrictionWork.dyadic_amplitude_sum_eq_indicator
+#print axioms RestrictionWork.dyadic_amplitude_sum_eq_indicator
+#check @RestrictionWork.measurable_dyadic_amplitude_trunc
+#print axioms RestrictionWork.measurable_dyadic_amplitude_trunc
+#check @RestrictionWork.norm_dyadic_amplitude_trunc_le
+#print axioms RestrictionWork.norm_dyadic_amplitude_trunc_le
+#check @RestrictionWork.tendsto_dyadic_amplitude_trunc
+#print axioms RestrictionWork.tendsto_dyadic_amplitude_trunc
+#check @RestrictionWork.dyadic_amplitude_mass_sum_le
+#print axioms RestrictionWork.dyadic_amplitude_mass_sum_le
+#check @RestrictionWork.dyadic_exponential_kernel_sum_le
+#print axioms RestrictionWork.dyadic_exponential_kernel_sum_le
+#check @RestrictionWork.dyadic_pairing_exponent_on_line
+#print axioms RestrictionWork.dyadic_pairing_exponent_on_line
+#check @RestrictionWork.card_dyadic_whitney_left_fiber_le
+#print axioms RestrictionWork.card_dyadic_whitney_left_fiber_le
+#check @RestrictionWork.card_dyadic_whitney_right_fiber_le
+#print axioms RestrictionWork.card_dyadic_whitney_right_fiber_le
+#check @RestrictionWork.dyadicWhitneyMass
+#print axioms RestrictionWork.dyadicWhitneyMass
+#check @RestrictionWork.dyadic_whitney_mass_prod_le
+#print axioms RestrictionWork.dyadic_whitney_mass_prod_le
+#check @RestrictionWork.dyadic_whitney_mass_sum_le
+#print axioms RestrictionWork.dyadic_whitney_mass_sum_le
+#check @RestrictionWork.volume_dyadic_parameter_cell_at_whitney_level
+#print axioms RestrictionWork.volume_dyadic_parameter_cell_at_whitney_level
+#check @RestrictionWork.dyadic_whitney_mass_le
+#print axioms RestrictionWork.dyadic_whitney_mass_le
+#check @RestrictionWork.dyadic_whitney_mass_tsum_le
+#print axioms RestrictionWork.dyadic_whitney_mass_tsum_le
+#check @RestrictionWork.dyadic_whitney_pair_distance_ge
+#print axioms RestrictionWork.dyadic_whitney_pair_distance_ge
+#check @RestrictionWork.dyadic_whitney_pair_localize
+#print axioms RestrictionWork.dyadic_whitney_pair_localize
+#check @RestrictionWork.graph_extension_norm_le_integral_norm
+#print axioms RestrictionWork.graph_extension_norm_le_integral_norm
+#check @RestrictionWork.graph_extension_const_mul
+#print axioms RestrictionWork.graph_extension_const_mul
+#check @RestrictionWork.graph_extension_congr_ae
+#print axioms RestrictionWork.graph_extension_congr_ae
+#check @RestrictionWork.graph_extension_finsetSum
+#print axioms RestrictionWork.graph_extension_finsetSum
+#check @RestrictionWork.graph_extension_tendsto_of_dominated
+#print axioms RestrictionWork.graph_extension_tendsto_of_dominated
+#check @RestrictionWork.graph_extension_pairing_tendsto
+#print axioms RestrictionWork.graph_extension_pairing_tendsto
+#check @RestrictionWork.graph_extension_pairing_finset_le
+#print axioms RestrictionWork.graph_extension_pairing_finset_le
+#check @RestrictionWork.SphericalGraphRestrictedKnapp
+#print axioms RestrictionWork.SphericalGraphRestrictedKnapp
+#check @RestrictionWork.restricted_graph_data
+#print axioms RestrictionWork.restricted_graph_data
+#check @RestrictionWork.graph_extension_enorm_le_restricted_mass
+#print axioms RestrictionWork.graph_extension_enorm_le_restricted_mass
+#check @RestrictionWork.originalSmallCap
+#print axioms RestrictionWork.originalSmallCap
+#check @RestrictionWork.measurableSet_originalSmallCap
+#print axioms RestrictionWork.measurableSet_originalSmallCap
+#check @RestrictionWork.original_cap_reverse
+#print axioms RestrictionWork.original_cap_reverse
+#check @RestrictionWork.weighted_matrix_rpow_sum_le
+#print axioms RestrictionWork.weighted_matrix_rpow_sum_le
+#check @RestrictionWork.weighted_matrix_rpow_sum_le_of_normalized
+#print axioms RestrictionWork.weighted_matrix_rpow_sum_le_of_normalized
+#check @RestrictionWork.exists_restricted_strong_nearby
+#print axioms RestrictionWork.exists_restricted_strong_nearby
+#check @RestrictionWork.sphereIsometry
+#print axioms RestrictionWork.sphereIsometry
+#check @RestrictionWork.sphere_isometry_isometry
+#print axioms RestrictionWork.sphere_isometry_isometry
+#check @RestrictionWork.sphere_isometry_measurePreserving
+#print axioms RestrictionWork.sphere_isometry_measurePreserving
+#check @RestrictionWork.extension_comp_sphereIsometry
+#print axioms RestrictionWork.extension_comp_sphereIsometry
+#check @RestrictionWork.eLpNorm_extension_comp_sphereIsometry
+#print axioms RestrictionWork.eLpNorm_extension_comp_sphereIsometry
+#check @RestrictionWork.exists_sphere_isometry_apply
+#print axioms RestrictionWork.exists_sphere_isometry_apply
+#check @RestrictionWork.whitney_layer_mass_factor
+#print axioms RestrictionWork.whitney_layer_mass_factor
+#check @RestrictionWork.graph_extension_le_of_unit_pairing
+#print axioms RestrictionWork.graph_extension_le_of_unit_pairing
+#check @RestrictionWork.graph_knapp_unit_pairing_from_atoms
+#print axioms RestrictionWork.graph_knapp_unit_pairing_from_atoms
+#check @RestrictionWork.graph_whitney_layer_eLpNorm_two_sq
+#print axioms RestrictionWork.graph_whitney_layer_eLpNorm_two_sq
+#check @RestrictionWork.graph_whitney_layer_eLpNorm
+#print axioms RestrictionWork.graph_whitney_layer_eLpNorm
+#check @RestrictionWork.graph_extension_product_eLpNorm_top_le_mass
+#print axioms RestrictionWork.graph_extension_product_eLpNorm_top_le_mass
+#check @RestrictionWork.original_small_cap_contains_ball
+#print axioms RestrictionWork.original_small_cap_contains_ball
+#check @RestrictionWork.norm_cell_indicator_le
+#print axioms RestrictionWork.norm_cell_indicator_le
+#check @RestrictionWork.spherical_graph_whitney_term_bound
+#print axioms RestrictionWork.spherical_graph_whitney_term_bound
+#check @RestrictionWork.boundedSphereExtension_of_ball_bound
+#print axioms RestrictionWork.boundedSphereExtension_of_ball_bound
+#check @RestrictionWork.spherical_graph_restricted_knapp_at_le_two
+#print axioms RestrictionWork.spherical_graph_restricted_knapp_at_le_two
+#check @RestrictionWork.spherical_graph_restricted_knapp_below_half
+#print axioms RestrictionWork.spherical_graph_restricted_knapp_below_half
+#check @RestrictionWork.original_small_cap_bound_of_graph
+#print axioms RestrictionWork.original_small_cap_bound_of_graph
+#check @RestrictionWork.spherical_graph_restricted_knapp
+#print axioms RestrictionWork.spherical_graph_restricted_knapp
+#check @RestrictionWork.spherical_graph_restricted_knapp_linear
+#print axioms RestrictionWork.spherical_graph_restricted_knapp_linear
+#check @RestrictionWork.boundedSphereExtension_of_quarter_graph
+#print axioms RestrictionWork.boundedSphereExtension_of_quarter_graph
+#check @RestrictionWork.finiteKnappBoundary_of_quarter_graph
+#print axioms RestrictionWork.finiteKnappBoundary_of_quarter_graph
+#check @RestrictionWork.admissible_finite_knapp_reparam
+#print axioms RestrictionWork.admissible_finite_knapp_reparam
+#check @RestrictionWork.fullSphereRestriction_of_graph_strong
+#print axioms RestrictionWork.fullSphereRestriction_of_graph_strong
+#check @RestrictionWork.knapp_dyadic_pair_decay
+#print axioms RestrictionWork.knapp_dyadic_pair_decay
+#check @RestrictionWork.spherical_graph_knapp_atom_pairing_le
+#print axioms RestrictionWork.spherical_graph_knapp_atom_pairing_le
+#check @RestrictionWork.spherical_graph_knapp_unit_pairing
+#print axioms RestrictionWork.spherical_graph_knapp_unit_pairing
+#check @RestrictionWork.spherical_graph_knapp_strong
+#print axioms RestrictionWork.spherical_graph_knapp_strong
+#check @RestrictionWork.fullSphereRestrictionConjecture
+#print axioms RestrictionWork.fullSphereRestrictionConjecture
+#check @RestrictionWork.finiteKnappBoundarySufficiency
+#print axioms RestrictionWork.finiteKnappBoundarySufficiency
+#check @RestrictionWork.jsp001040_catalog_statement
+#print axioms RestrictionWork.jsp001040_catalog_statement
+#check @RestrictionWork.original_target_iff_finite_knapp
+#print axioms RestrictionWork.original_target_iff_finite_knapp
+#check @RestrictionWork.original_sphere_necessity
+#print axioms RestrictionWork.original_sphere_necessity
+#check @RestrictionWork.strict_admissible_sufficiency
+#print axioms RestrictionWork.strict_admissible_sufficiency
+#check @RestrictionWork.extension_top_bound
+#print axioms RestrictionWork.extension_top_bound
+#check @RestrictionWork.graph_extension_whitney_hasSum
+#print axioms RestrictionWork.graph_extension_whitney_hasSum
+#check @RestrictionWork.whitney_dyadic_mass_sum
+#print axioms RestrictionWork.whitney_dyadic_mass_sum
+#check @RestrictionWork.shifted_graph_whitney_pair_bound
+#print axioms RestrictionWork.shifted_graph_whitney_pair_bound
+#check @RestrictionWork.graph_whitney_layer_eLpNorm_lt_two
+#print axioms RestrictionWork.graph_whitney_layer_eLpNorm_lt_two
+#check @RestrictionWork.eLpNorm_reciprocal_interpolate
+#print axioms RestrictionWork.eLpNorm_reciprocal_interpolate
+#check @OAI.Analysis.Fourier.BochnerRiesz.eLpNorm_le_of_integral_mul_bound
+#print axioms OAI.Analysis.Fourier.BochnerRiesz.eLpNorm_le_of_integral_mul_bound
+
+#print RestrictionWork.FullSphereRestrictionConjecture
+#print RestrictionWork.FiniteKnappBoundarySufficiency
+#print RestrictionWork.AdmissibleExponents
+#print RestrictionWork.BoundedSphereExtension
+#print RestrictionWork.sphereMeasure
+#print RestrictionWork.kernel
+#print RestrictionWork.extension

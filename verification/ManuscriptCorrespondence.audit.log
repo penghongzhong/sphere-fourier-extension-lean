@@ -1,0 +1,922 @@
+JSP001040Manuscript.fullRange (n : ℕ) (hn : 3 ≤ n) (p q : ENNReal) (hp : 1 ≤ p) (hq : 1 ≤ q) :
+  (∃ C,
+      ∀ (f : ↑(RestrictionWork.UnitSphere n) → ℂ),
+        MeasureTheory.MemLp f p (JSP001040Manuscript.surfaceMeasure✝ n) →
+          MeasureTheory.MemLp (JSP001040Manuscript.extension✝ f) q MeasureTheory.volume ∧
+            MeasureTheory.eLpNorm (JSP001040Manuscript.extension✝ f) q MeasureTheory.volume ≤
+              ↑C * MeasureTheory.eLpNorm f p (JSP001040Manuscript.surfaceMeasure✝ n)) ↔
+    ENNReal.ofReal (2 * ↑n / (↑n - 1)) < q ∧ ENNReal.ofReal ((↑n + 1) / (↑n - 1)) * (1 - p⁻¹)⁻¹ ≤ q
+'JSP001040Manuscript.fullRange' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.jsp001040_catalog_statement (n : ℕ) (hn : 3 ≤ n) (p q : ENNReal) (hp : 1 ≤ p) (hq : 1 ≤ q) :
+  RestrictionWork.BoundedSphereExtension n p q ↔
+    ENNReal.ofReal (2 * ↑n / (↑n - 1)) < q ∧ ENNReal.ofReal ((↑n + 1) / (↑n - 1)) * (1 - p⁻¹)⁻¹ ≤ q
+'RestrictionWork.jsp001040_catalog_statement' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.fullSphereRestrictionConjecture : RestrictionWork.FullSphereRestrictionConjecture
+'RestrictionWork.fullSphereRestrictionConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]
+JSP001040Manuscript.finiteKnappBoundary (n : ℕ) (hn : 3 ≤ n) (p q : ENNReal) (hp : 1 ≤ p) (hq : 1 ≤ q)
+  (hrad : ENNReal.ofReal (2 * ↑n / (↑n - 1)) < q) (hline : q = ENNReal.ofReal ((↑n + 1) / (↑n - 1)) * (1 - p⁻¹)⁻¹)
+  (hqfin : q < ⊤) :
+  ∃ C,
+    ∀ (f : ↑(RestrictionWork.UnitSphere n) → ℂ),
+      MeasureTheory.MemLp f p (JSP001040Manuscript.surfaceMeasure✝ n) →
+        MeasureTheory.MemLp (JSP001040Manuscript.extension✝ f) q MeasureTheory.volume ∧
+          MeasureTheory.eLpNorm (JSP001040Manuscript.extension✝ f) q MeasureTheory.volume ≤
+            ↑C * MeasureTheory.eLpNorm f p (JSP001040Manuscript.surfaceMeasure✝ n)
+'JSP001040Manuscript.finiteKnappBoundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.finiteKnappBoundarySufficiency : RestrictionWork.FiniteKnappBoundarySufficiency
+'RestrictionWork.finiteKnappBoundarySufficiency' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.finiteKnappBoundary_of_quarter_graph
+  (hgraph :
+    ∀ (d : ℕ),
+      2 ≤ d →
+        ∀ (p q : ENNReal),
+          q ≠ ⊤ →
+            RestrictionWork.AdmissibleExponents (d + 1) p q →
+              q⁻¹.toReal = (↑(d + 1) - 1) / (↑(d + 1) + 1) * (1 - p⁻¹.toReal) →
+                ∃ C < ⊤,
+                  ∀ (g : RestrictionWork.Ambient d → ℂ),
+                    Measurable g →
+                      MeasureTheory.MemLp g p (RestrictionWork.patchMeasure d) →
+                        (∀ v ∉ Metric.ball 0 (1 / 4), g v = 0) →
+                          MeasureTheory.eLpNorm
+                              (RestrictionWork.graphExtension g (RestrictionWork.sphericalGraphPhase (1 / 2))) q
+                              MeasureTheory.volume ≤
+                            C * MeasureTheory.eLpNorm g p (RestrictionWork.patchMeasure d)) :
+  RestrictionWork.FiniteKnappBoundarySufficiency
+'RestrictionWork.finiteKnappBoundary_of_quarter_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+OAI.Analysis.Fourier.Radial.bessel_normalized_asymptotic {m : ℝ} {f g : ℝ → ℝ}
+  (hf : ∀ (t : ℝ), 1 ≤ t → HasDerivAt f (g t) t) (hg : ∀ (t : ℝ), 1 ≤ t → HasDerivAt g (-2 * m / t * g t - f t) t)
+  (hne : f 1 ≠ 0 ∨ g 1 ≠ 0) :
+  ∃ A B C,
+    0 ≤ C ∧
+      0 < A ^ 2 + B ^ 2 ∧
+        ∀ (r : ℝ),
+          1 ≤ r →
+            |r ^ m * f r - (A * Real.cos r + B * Real.sin r)| ≤ C / r ∧
+              |r ^ m * g r + m * r ^ (m - 1) * f r - (-A * Real.sin r + B * Real.cos r)| ≤ C / r
+'OAI.Analysis.Fourier.Radial.bessel_normalized_asymptotic' depends on axioms: [propext, Classical.choice, Quot.sound]
+OAI.Analysis.Fourier.Radial.sphericalExtension_one_asymptotic {n : ℕ} (hn : 1 ≤ n) :
+  ∃ A B C,
+    0 ≤ C ∧
+      0 < A ^ 2 + B ^ 2 ∧
+        ∀ (x : OAI.Analysis.Fourier.Wave.Space n),
+          1 ≤ ‖x‖ →
+            ‖↑(‖x‖ ^ ((↑n - 1) / 2)) * OAI.Analysis.Fourier.Restriction.sphericalExtension (fun x => 1) x -
+                  ↑(A * Real.cos ‖x‖ + B * Real.sin ‖x‖)‖ ≤
+              C / ‖x‖
+'OAI.Analysis.Fourier.Radial.sphericalExtension_one_asymptotic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+RestrictionWork.sphere_constant_nonintegrability {n : ℕ} (hn : 3 ≤ n) {q : ENNReal} (hq : 1 ≤ q) (hqt : q ≠ ⊤)
+  (hqc : q.toReal ≤ 2 * ↑n / (↑n - 1)) :
+  ¬MeasureTheory.MemLp (OAI.Analysis.Fourier.Restriction.sphericalExtension fun x => 1) q MeasureTheory.volume
+'RestrictionWork.sphere_constant_nonintegrability' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.original_radial_necessary : RestrictionWork.RadialRestrictionNecessity
+'RestrictionWork.original_radial_necessary' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.original_sphere_necessity : RestrictionWork.SphereRestrictionNecessity
+'RestrictionWork.original_sphere_necessity' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.cap_coherent_pointwise {d : ℕ} {δ : ℝ} (hδ : 0 < δ) (hδ₁ : δ ≤ 1 / 2)
+  (z : RestrictionWork.Ambient d × ℝ) (hz : ‖z‖ ≤ 1 / 8) :
+  (RestrictionWork.patchMeasure d).real Set.univ / 2 ≤ ‖RestrictionWork.sphericalPatchExtension δ (fun x => 1) z‖
+'RestrictionWork.cap_coherent_pointwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.original_cap_norm_transfer {d : ℕ} {δ : ℝ} (hδ : 0 < δ) (hδ₁ : δ ≤ 1 / 2)
+  {g : RestrictionWork.Ambient d → ℂ} {p : ENNReal} (hp : 1 ≤ p)
+  (hg : MeasureTheory.MemLp g p (RestrictionWork.patchMeasure d)) (q : ENNReal)
+  (S : Set (RestrictionWork.Ambient d × ℝ)) :
+  MeasureTheory.MemLp (RestrictionWork.capSphereLift δ g) p (RestrictionWork.sphereMeasure (d + 1)) ∧
+    MeasureTheory.eLpNorm (RestrictionWork.capSphereLift δ g) p (RestrictionWork.sphereMeasure (d + 1)) =
+        MeasureTheory.eLpNorm (RestrictionWork.capProfile δ g) p (RestrictionWork.capParameterMeasure d δ) ∧
+      MeasureTheory.eLpNorm (RestrictionWork.capSphereLift δ g) p (RestrictionWork.sphereMeasure (d + 1)) ≤
+          ENNReal.ofReal (2 * δ ^ d) ^ p.toReal⁻¹ * MeasureTheory.eLpNorm g p (RestrictionWork.patchMeasure d) ∧
+        ENNReal.ofReal (δ ^ d) *
+            MeasureTheory.eLpNorm (RestrictionWork.sphericalPatchExtension δ g) q (MeasureTheory.volume.restrict S) =
+          ENNReal.ofReal ((2 * Real.pi) ^ (d + 1) * δ ^ (d + 2) / 2) ^ q.toReal⁻¹ *
+            MeasureTheory.eLpNorm (RestrictionWork.extension (RestrictionWork.capSphereLift δ g)) q
+              (MeasureTheory.volume.restrict
+                ((fun z => (2 * Real.pi)⁻¹ • RestrictionWork.physicalEmbed (RestrictionWork.capPhysicalScale δ z)) ''
+                  S))
+'RestrictionWork.original_cap_norm_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.cap_knapp_necessity {d : ℕ} {p q : ENNReal} (hp : 1 ≤ p) (hq : 1 ≤ q)
+  (hE : RestrictionWork.BoundedSphereExtension (d + 1) p q) : q⁻¹.toReal ≤ ↑d / (↑d + 2) * (1 - p⁻¹.toReal)
+'RestrictionWork.cap_knapp_necessity' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.original_knapp_necessary {n : ℕ} (hn : 3 ≤ n) {p q : ENNReal} (hp : 1 ≤ p) (hq : 1 ≤ q)
+  (hE : RestrictionWork.BoundedSphereExtension n p q) : q⁻¹.toReal ≤ (↑n - 1) / (↑n + 1) * (1 - p⁻¹.toReal)
+'RestrictionWork.original_knapp_necessary' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.extension_top_bound {n : ℕ} {p : ENNReal} (hp : 1 ≤ p) : RestrictionWork.BoundedSphereExtension n p ⊤
+'RestrictionWork.extension_top_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+CriticalReplay.twoPi_critical_local_extension {n : ℕ} (hn : 2 ≤ n) {ε : ℝ} (hε : 0 < ε) :
+  ∃ D,
+    D ≠ ⊤ ∧
+      ∀ (R : ℝ),
+        1 ≤ R →
+          ∀ (g : OAI.Analysis.Fourier.Wave.Space n → ℂ),
+            MeasureTheory.MemLp g (ENNReal.ofReal (OAI.Analysis.Fourier.LocalSmoothing.criticalExponent n))
+                (OAI.Analysis.Fourier.Restriction.sphereMeasure n) →
+              MeasureTheory.MemLp (CriticalReplay.sphericalExtensionTwoPi g)
+                  (ENNReal.ofReal (OAI.Analysis.Fourier.LocalSmoothing.criticalExponent n))
+                  (MeasureTheory.volume.restrict (Metric.closedBall 0 R)) ∧
+                MeasureTheory.eLpNorm (CriticalReplay.sphericalExtensionTwoPi g)
+                    (ENNReal.ofReal (OAI.Analysis.Fourier.LocalSmoothing.criticalExponent n))
+                    (MeasureTheory.volume.restrict (Metric.closedBall 0 R)) ≤
+                  D * ENNReal.ofReal (R ^ ε) *
+                    MeasureTheory.eLpNorm g (ENNReal.ofReal (OAI.Analysis.Fourier.LocalSmoothing.criticalExponent n))
+                      (OAI.Analysis.Fourier.Restriction.sphereMeasure n)
+'CriticalReplay.twoPi_critical_local_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.original_critical_local_input {n : ℕ} (hn : 2 ≤ n) {ε : ℝ} (hε : 0 < ε) :
+  ∃ C,
+    ∀ (R : ℝ),
+      1 ≤ R →
+        ∀ (f : ↑(RestrictionWork.UnitSphere n) → ℂ),
+          MeasureTheory.MemLp f (ENNReal.ofReal (OAI.Analysis.Fourier.LocalSmoothing.criticalExponent n))
+              (RestrictionWork.sphereMeasure n) →
+            MeasureTheory.MemLp (RestrictionWork.extension f)
+                (ENNReal.ofReal (OAI.Analysis.Fourier.LocalSmoothing.criticalExponent n))
+                (MeasureTheory.volume.restrict (Metric.ball 0 R)) ∧
+              MeasureTheory.eLpNorm (RestrictionWork.extension f)
+                  (ENNReal.ofReal (OAI.Analysis.Fourier.LocalSmoothing.criticalExponent n))
+                  (MeasureTheory.volume.restrict (Metric.ball 0 R)) ≤
+                ↑C * ENNReal.ofReal (R ^ ε) *
+                  MeasureTheory.eLpNorm f (ENNReal.ofReal (OAI.Analysis.Fourier.LocalSmoothing.criticalExponent n))
+                    (RestrictionWork.sphereMeasure n)
+'RestrictionWork.original_critical_local_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+CriticalReplay.global_mixed_extension : OAI.Analysis.Fourier.Restriction.SphericalRestrictionConjecture
+'CriticalReplay.global_mixed_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.original_global_strict_input {n : ℕ} (hn : 2 ≤ n) {p : ENNReal} (hp : 1 < p) {q : ℝ}
+  (hq : 2 * ↑n / (↑n - 1) < q) (hpq : (↑n + 1) / (↑n - 1) * OAI.Analysis.Fourier.Restriction.conjugateExponent p < q) :
+  ∃ C,
+    ∀ (f : ↑(RestrictionWork.UnitSphere n) → ℂ),
+      MeasureTheory.MemLp f p (RestrictionWork.sphereMeasure n) →
+        MeasureTheory.MemLp (RestrictionWork.extension f) (ENNReal.ofReal q) MeasureTheory.volume ∧
+          MeasureTheory.eLpNorm (RestrictionWork.extension f) (ENNReal.ofReal q) MeasureTheory.volume ≤
+            ↑C * MeasureTheory.eLpNorm f p (RestrictionWork.sphereMeasure n)
+'RestrictionWork.original_global_strict_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.strict_admissible_sufficiency {n : ℕ} (hn : 3 ≤ n) {p q : ENNReal} (hp : 1 ≤ p) (hq : 1 ≤ q)
+  (hrad : ENNReal.ofReal (2 * ↑n / (↑n - 1)) < q) (hstrict : q⁻¹.toReal < (↑n - 1) / (↑n + 1) * (1 - p⁻¹.toReal)) :
+  RestrictionWork.BoundedSphereExtension n p q
+'RestrictionWork.strict_admissible_sufficiency' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.uniform_shifted_spherical_subcap_bound {d : ℕ} (hd : 1 ≤ d) {ε : ℝ} (hε : 0 < ε) :
+  ∃ C,
+    ∀ (δ : ℝ),
+      0 < δ →
+        δ ≤ 1 / 2 →
+          ∀ (a : RestrictionWork.Ambient d),
+            ‖a‖ ≤ 1 / 2 →
+              ∀ (r : ℝ),
+                0 < r →
+                  r ≤ 1 / 2 →
+                    ∀ (R : ℝ),
+                      1 ≤ R →
+                        ∀ (g : RestrictionWork.Ambient d → ℂ),
+                          MeasureTheory.MemLp g (RestrictionWork.capCriticalExponent d)
+                              (RestrictionWork.patchMeasure d) →
+                            MeasureTheory.MemLp
+                                (RestrictionWork.graphExtension g (RestrictionWork.shiftedSphericalGraphPhase δ a r))
+                                (RestrictionWork.capCriticalExponent d)
+                                (MeasureTheory.volume.restrict (Metric.ball 0 R)) ∧
+                              MeasureTheory.eLpNorm
+                                  (RestrictionWork.graphExtension g (RestrictionWork.shiftedSphericalGraphPhase δ a r))
+                                  (RestrictionWork.capCriticalExponent d)
+                                  (MeasureTheory.volume.restrict (Metric.ball 0 R)) ≤
+                                ↑C * ENNReal.ofReal (R ^ ε) *
+                                  MeasureTheory.eLpNorm g (RestrictionWork.capCriticalExponent d)
+                                    (RestrictionWork.patchMeasure d)
+'RestrictionWork.uniform_shifted_spherical_subcap_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_spherical_local_bound {d : ℕ} (hd : 1 ≤ d) {η : ℝ} (hη : 0 < η) :
+  ∃ A,
+    ∀ (δ : ℝ),
+      0 < δ →
+        δ ≤ 1 / 2 →
+          ∀ (a : RestrictionWork.Ambient d),
+            ‖a‖ ≤ 1 / 2 →
+              ∀ (r : ℝ),
+                0 < r →
+                  r ≤ 1 / 2 →
+                    ∀ (R : ℝ),
+                      1 ≤ R →
+                        ∀ (g : RestrictionWork.Ambient d → ℂ),
+                          MeasureTheory.MemLp g (RestrictionWork.capCriticalExponent d)
+                              (RestrictionWork.patchMeasure d) →
+                            MeasureTheory.MemLp
+                                (RestrictionWork.graphExtension g (RestrictionWork.shiftedSphericalGraphPhase δ a r))
+                                (RestrictionWork.capCriticalExponent d)
+                                (MeasureTheory.volume.restrict (Metric.ball 0 R)) ∧
+                              MeasureTheory.eLpNorm
+                                  (RestrictionWork.graphExtension g (RestrictionWork.shiftedSphericalGraphPhase δ a r))
+                                  (RestrictionWork.capCriticalExponent d)
+                                  (MeasureTheory.volume.restrict (Metric.ball 0 R)) ≤
+                                ↑A * ENNReal.ofReal (R ^ η * r ^ (-2 * η)) *
+                                  MeasureTheory.eLpNorm g (RestrictionWork.capCriticalExponent d)
+                                    (RestrictionWork.patchMeasure d)
+'RestrictionWork.shifted_spherical_local_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_spherical_kernel_decay {d : ℕ} (hd : 1 ≤ d) :
+  ∃ C,
+    0 ≤ C ∧
+      ∀ {δ r : ℝ} {a : RestrictionWork.Ambient d},
+        0 < δ →
+          δ ≤ 1 / 2 →
+            ‖a‖ ≤ 1 / 2 →
+              0 < r →
+                r ≤ 1 / 2 →
+                  ∀ (z : RestrictionWork.Ambient d × ℝ),
+                    ‖RestrictionWork.patchGraphKernel (RestrictionWork.shiftedSphericalGraphPhase δ a r) z‖ ≤
+                      C / √(1 + ‖z‖)
+'RestrictionWork.shifted_spherical_kernel_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_spherical_sparse_integral_kernel_bound {d : ℕ} (hd : 1 ≤ d)
+  (u : SchwartzMap (RestrictionWork.Ambient (d + 1)) ℂ)
+  (hu :
+    ∀ (ξ : OAI.Analysis.Fourier.Wave.Space (d + 1)), ‖OAI.Analysis.Fourier.LocalSmoothing.angularFourier (⇑u) ξ‖ ≤ 1)
+  (hr :
+    ∀ (ξ : OAI.Analysis.Fourier.Wave.Space (d + 1)),
+      star (OAI.Analysis.Fourier.LocalSmoothing.angularFourier (⇑u) ξ) =
+        OAI.Analysis.Fourier.LocalSmoothing.angularFourier (⇑u) ξ)
+  (hs :
+    ∀ (ξ : OAI.Analysis.Fourier.Wave.Space (d + 1)),
+      1 / 8 ≤ ‖ξ‖ → OAI.Analysis.Fourier.LocalSmoothing.angularFourier (⇑u) ξ = 0)
+  {p : ℝ} (hp : 1 < p) (hp2 : p < 2) {V : ENNReal} (hV : V ≠ ⊤) :
+  ∃ C,
+    C ≠ ⊤ ∧
+      ∀ {δ r : ℝ} {a : RestrictionWork.Ambient d},
+        0 < δ →
+          δ ≤ 1 / 2 →
+            ‖a‖ ≤ 1 / 2 →
+              0 < r →
+                r ≤ 1 / 2 →
+                  ∀ (N : ℕ) (R : ℝ),
+                    1 ≤ R →
+                      ∀ (z : Fin N → RestrictionWork.Ambient (d + 1)),
+                        (∀ (i j : Fin N), i ≠ j → R ^ (16 * (d + 1)) * ↑N ^ (16 * (d + 1)) ≤ dist (z i) (z j)) →
+                          ∀ (ν : MeasureTheory.Measure (RestrictionWork.Ambient (d + 1))),
+                            MeasureTheory.IsFiniteMeasure ν →
+                              ν ≤ MeasureTheory.volume →
+                                ν Set.univ ≤ V →
+                                  ∀ (f : Fin N × RestrictionWork.Ambient (d + 1) → ℂ),
+                                    Measurable f →
+                                      MeasureTheory.Integrable f (MeasureTheory.Measure.count.prod ν) →
+                                        MeasureTheory.eLpNorm
+                                            (OAI.Analysis.Fourier.Restriction.integralKernel
+                                              (MeasureTheory.Measure.count.prod ν)
+                                              (OAI.Analysis.Fourier.Restriction.indexedLocalizedKernel u R z) f)
+                                            (ENNReal.ofReal p)
+                                            (RestrictionWork.patchGraphMeasure
+                                              (RestrictionWork.shiftedSphericalGraphPhase δ a r)) ≤
+                                          C * ENNReal.ofReal R ^ (1 / p) *
+                                            MeasureTheory.eLpNorm f (ENNReal.ofReal p)
+                                              (MeasureTheory.Measure.count.prod ν)
+'RestrictionWork.shifted_spherical_sparse_integral_kernel_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+RestrictionWork.shifted_graph_sparse_restriction_indexed {d : ℕ} (hd : 1 ≤ d) {ε : ℝ} (hε : 0 < ε) :
+  ∃ C,
+    C ≠ ⊤ ∧
+      ∀ {δ r : ℝ} {a : RestrictionWork.Ambient d},
+        0 < δ →
+          δ ≤ 1 / 2 →
+            ‖a‖ ≤ 1 / 2 →
+              0 < r →
+                r ≤ 1 / 2 →
+                  ∀ (N : ℕ) (R : ℝ),
+                    1 ≤ R →
+                      ∀ (z : Fin N → RestrictionWork.Ambient (d + 1)),
+                        (∀ (i j : Fin N), i ≠ j → R ^ (16 * (d + 1)) * ↑N ^ (16 * (d + 1)) ≤ dist (z i) (z j)) →
+                          ∀ (f : RestrictionWork.Ambient (d + 1) → ℂ),
+                            Measurable f →
+                              MeasureTheory.Integrable f MeasureTheory.volume →
+                                (∀ (x : RestrictionWork.Ambient (d + 1)),
+                                    (∀ (i : Fin N), x ∉ Metric.ball (z i) R) → f x = 0) →
+                                  have p :=
+                                    ENNReal.ofReal (OAI.Analysis.Fourier.Restriction.restrictionInputExponent (d + 1));
+                                  MeasureTheory.eLpNorm (OAI.Analysis.Fourier.LocalSmoothing.angularFourier f) p
+                                      (RestrictionWork.patchGraphMeasure
+                                        (RestrictionWork.shiftedSphericalGraphPhase δ a r)) ≤
+                                    C * ENNReal.ofReal (R ^ ε) * MeasureTheory.eLpNorm f p MeasureTheory.volume
+'RestrictionWork.shifted_graph_sparse_restriction_indexed' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_graph_sparse_measure_fourier_bound {d : ℕ} (hd : 1 ≤ d) {ε : ℝ} (hε : 0 < ε) :
+  ∃ C,
+    C ≠ ⊤ ∧
+      ∀ {δ r : ℝ} {a : RestrictionWork.Ambient d},
+        0 < δ →
+          δ ≤ 1 / 2 →
+            ‖a‖ ≤ 1 / 2 →
+              0 < r →
+                r ≤ 1 / 2 →
+                  RestrictionWork.SparseMeasureFourierBound
+                    (RestrictionWork.patchGraphMeasure (RestrictionWork.shiftedSphericalGraphPhase δ a r))
+                    (ENNReal.ofReal (OAI.Analysis.Fourier.Restriction.restrictionInputExponent (d + 1))) ε
+                    (16 * (d + 1)) C
+'RestrictionWork.shifted_graph_sparse_measure_fourier_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.measure_sparse_bound_implies_restriction {n : ℕ}
+  (𝓜 : Set (MeasureTheory.Measure (OAI.Analysis.Fourier.Wave.Space n))) {K : ℝ} (hK : 1 ≤ K)
+  (hsupp : ∀ μ ∈ 𝓜, ∀ᵐ (ξ : OAI.Analysis.Fourier.Wave.Space n) ∂μ, ‖ξ‖ ≤ K) {V : ENNReal} (hV : V ≠ ⊤)
+  (hmass : ∀ μ ∈ 𝓜, μ Set.univ ≤ V) {p q : ℝ} (hq : 1 ≤ q) (hqp : q < p) {D : ℕ} (hD : 0 < D)
+  (hSparse : ∀ α > 0, ∃ C, C ≠ ⊤ ∧ ∀ μ ∈ 𝓜, RestrictionWork.SparseMeasureFourierBound μ (ENNReal.ofReal p) α D C) :
+  ∃ C,
+    C ≠ ⊤ ∧
+      ∀ μ ∈ 𝓜,
+        ∀ (f : OAI.Analysis.Fourier.Wave.Space n → ℂ),
+          MeasureTheory.Integrable f MeasureTheory.volume →
+            MeasureTheory.eLpNorm (OAI.Analysis.Fourier.LocalSmoothing.angularFourier f) (ENNReal.ofReal q) μ ≤
+              C * MeasureTheory.eLpNorm f (ENNReal.ofReal q) MeasureTheory.volume
+'RestrictionWork.measure_sparse_bound_implies_restriction' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_graph_global_restriction {d : ℕ} (hd : 1 ≤ d) {q : ℝ} (hq : 1 ≤ q)
+  (hqp : q < OAI.Analysis.Fourier.Restriction.restrictionInputExponent (d + 1)) :
+  ∃ C,
+    C ≠ ⊤ ∧
+      ∀ {δ r : ℝ} {a : RestrictionWork.Ambient d},
+        0 < δ →
+          δ ≤ 1 / 2 →
+            ‖a‖ ≤ 1 / 2 →
+              0 < r →
+                r ≤ 1 / 2 →
+                  ∀ (f : RestrictionWork.Ambient (d + 1) → ℂ),
+                    MeasureTheory.Integrable f MeasureTheory.volume →
+                      MeasureTheory.eLpNorm (OAI.Analysis.Fourier.LocalSmoothing.angularFourier f) (ENNReal.ofReal q)
+                          (RestrictionWork.patchGraphMeasure (RestrictionWork.shiftedSphericalGraphPhase δ a r)) ≤
+                        C * MeasureTheory.eLpNorm f (ENNReal.ofReal q) MeasureTheory.volume
+'RestrictionWork.shifted_graph_global_restriction' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_graph_global_extension {d : ℕ} (hd : 1 ≤ d) {p : ℝ} (hp : 2 * (↑d + 1) / ↑d < p) :
+  ∃ C,
+    C ≠ ⊤ ∧
+      ∀ {δ r : ℝ} {a : RestrictionWork.Ambient d},
+        0 < δ →
+          δ ≤ 1 / 2 →
+            ‖a‖ ≤ 1 / 2 →
+              0 < r →
+                r ≤ 1 / 2 →
+                  ∀ (g : RestrictionWork.Ambient d → ℂ),
+                    MeasureTheory.MemLp g (ENNReal.ofReal p) (RestrictionWork.patchMeasure d) →
+                      MeasureTheory.MemLp
+                          (RestrictionWork.graphExtension g (RestrictionWork.shiftedSphericalGraphPhase δ a r))
+                          (ENNReal.ofReal p) MeasureTheory.volume ∧
+                        MeasureTheory.eLpNorm
+                            (RestrictionWork.graphExtension g (RestrictionWork.shiftedSphericalGraphPhase δ a r))
+                            (ENNReal.ofReal p) MeasureTheory.volume ≤
+                          C * MeasureTheory.eLpNorm g (ENNReal.ofReal p) (RestrictionWork.patchMeasure d)
+'RestrictionWork.shifted_graph_global_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_graph_global_diagonal_product {d : ℕ} (hd : 1 ≤ d) {p : ℝ} (hp : 2 * (↑d + 1) / ↑d < p) :
+  ∃ C,
+    C ≠ ⊤ ∧
+      ∀ {δ r : ℝ} {a : RestrictionWork.Ambient d},
+        0 < δ →
+          δ ≤ 1 / 2 →
+            ‖a‖ ≤ 1 / 2 →
+              0 < r →
+                r ≤ 1 / 2 →
+                  ∀ (g h : RestrictionWork.Ambient d → ℂ),
+                    MeasureTheory.MemLp g (ENNReal.ofReal p) (RestrictionWork.patchMeasure d) →
+                      MeasureTheory.MemLp h (ENNReal.ofReal p) (RestrictionWork.patchMeasure d) →
+                        have φ := RestrictionWork.shiftedSphericalGraphPhase δ a r;
+                        have P := ENNReal.ofReal p;
+                        have Q := (P⁻¹ + P⁻¹)⁻¹;
+                        MeasureTheory.MemLp (RestrictionWork.graphExtension g φ * RestrictionWork.graphExtension h φ) Q
+                            MeasureTheory.volume ∧
+                          MeasureTheory.eLpNorm
+                              (RestrictionWork.graphExtension g φ * RestrictionWork.graphExtension h φ) Q
+                              MeasureTheory.volume ≤
+                            C * MeasureTheory.eLpNorm g P (RestrictionWork.patchMeasure d) *
+                              MeasureTheory.eLpNorm h P (RestrictionWork.patchMeasure d)
+'RestrictionWork.shifted_graph_global_diagonal_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.filtered_radon_two_norm_sq_le {d : ℕ} (hd : 1 ≤ d) {m : ℝ → ℂ} (hm : Measurable m)
+  (hmi : MeasureTheory.Integrable m MeasureTheory.volume) (hm₂ : MeasureTheory.MemLp m 2 MeasureTheory.volume)
+  (hmb : ∀ (ρ : ℝ), ‖m ρ‖ ≤ 1) {R : ℝ} (hR : 0 < R) (hms : ∀ ρ < R, m ρ = 0) {f : RestrictionWork.Ambient d → ℂ}
+  (hf : MeasureTheory.Integrable f MeasureTheory.volume) (hf₂ : MeasureTheory.MemLp f 2 MeasureTheory.volume) :
+  MeasureTheory.eLpNorm (RestrictionWork.filteredRadon m f) 2
+        ((OAI.Analysis.Fourier.Restriction.sphereMeasure d).prod MeasureTheory.volume) ^
+      2 ≤
+    (ENNReal.ofReal (R ^ (d - 1)))⁻¹ * MeasureTheory.eLpNorm f 2 MeasureTheory.volume ^ 2
+'RestrictionWork.filtered_radon_two_norm_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.filtered_radon_uniform_frequency_bound {d : ℕ} (hd : 1 ≤ d) {m : ℝ → ℂ} (hm : Measurable m)
+  (hmi : MeasureTheory.Integrable m MeasureTheory.volume) (hmb : ∀ (ρ : ℝ), ‖m ρ‖ ≤ 1)
+  {f : RestrictionWork.Ambient d → ℂ} (hf : MeasureTheory.Integrable f MeasureTheory.volume)
+  (hf₂ : MeasureTheory.MemLp f 2 MeasureTheory.volume) {q : ℝ} (hq : 2 ≤ q) (hqd : q < ↑d + 1) (L : ℝ) :
+  have ν := (OAI.Analysis.Fourier.Restriction.sphereMeasure d).prod (MeasureTheory.volume.restrict (Set.Icc (-L) L));
+  MeasureTheory.eLpNorm (RestrictionWork.filteredRadon m f) (ENNReal.ofReal q) ν ≤
+    2 *
+      (MeasureTheory.eLpNorm f 1 MeasureTheory.volume * ν Set.univ ^ (1 / q) +
+        MeasureTheory.eLpNorm f 1 MeasureTheory.volume ^ ((q - 2) / q) *
+            MeasureTheory.eLpNorm f 2 MeasureTheory.volume ^ (2 / q) *
+          ENNReal.ofReal (1 - 2 ^ (1 - (↑d + 1) / q))⁻¹)
+'RestrictionWork.filtered_radon_uniform_frequency_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.radon_strip_restricted_bound {d : ℕ} (hd : 1 ≤ d) {h : ℝ} (hh : 0 < h)
+  {f : RestrictionWork.Ambient d → ℝ} (hf : Measurable f) {A : Set (RestrictionWork.Ambient d)} (hA : MeasurableSet A)
+  {V : ENNReal} (hV : V < ⊤) (hAV : MeasureTheory.volume A ≤ V) (hf0 : ∀ (v : RestrictionWork.Ambient d), 0 ≤ f v)
+  (hfA : ∀ (v : RestrictionWork.Ambient d), f v ≤ A.indicator (fun x => 1) v) {q : ℝ} (hq : 2 ≤ q) (hqd : q < ↑d + 1)
+  (L : ℝ) :
+  have ν := (OAI.Analysis.Fourier.Restriction.sphereMeasure d).prod (MeasureTheory.volume.restrict (Set.Icc (-L) L));
+  MeasureTheory.eLpNorm (RestrictionWork.radonStrip h f) (ENNReal.ofReal q) ν ≤
+    ENNReal.ofReal (2 * Real.exp Real.pi) *
+        (V ^ (1 / q) * ν Set.univ ^ (1 / q) + ENNReal.ofReal (1 - 2 ^ (1 - (↑d + 1) / q))⁻¹) *
+      MeasureTheory.volume A ^ (1 - 1 / q)
+'RestrictionWork.radon_strip_restricted_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_cap_chord_bounds {d : ℕ} {δ r : ℝ} {a v w : RestrictionWork.Ambient d} (hδ : 0 ≤ δ)
+  (hδhalf : δ ≤ 1 / 2) (ha : ‖a‖ ≤ 1 / 2) (hr : 0 ≤ r) (hrhalf : r ≤ 1 / 2) (hv : ‖v‖ ≤ 1) (hw : ‖w‖ ≤ 1) :
+  δ * r * ‖v - w‖ ≤ ‖RestrictionWork.shiftedCapPoint δ a r v - RestrictionWork.shiftedCapPoint δ a r w‖ ∧
+    ‖RestrictionWork.shiftedCapPoint δ a r v - RestrictionWork.shiftedCapPoint δ a r w‖ ≤ 2 * (δ * r) * ‖v - w‖
+'RestrictionWork.shifted_cap_chord_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.sphere_stereo_distance.{u_1} {E : Type u_1} [NormedAddCommGroup E] [InnerProductSpace ℝ E] {scale : ℝ}
+  (hscale : 0 ≤ scale) {pole point other : E} (hp : point ≠ pole) (hq : other ≠ pole) :
+  ‖RestrictionWork.sphereStereo scale pole point - RestrictionWork.sphereStereo scale pole other‖ =
+    scale * ‖point - other‖ / (‖point - pole‖ * ‖other - pole‖)
+'RestrictionWork.sphere_stereo_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.sphere_stereo_norm_sq.{u_1} {E : Type u_1} [NormedAddCommGroup E] [InnerProductSpace ℝ E] (scale : ℝ)
+  {pole point : E} (hp : ‖pole‖ = 1) (hq : ‖point‖ = 1) (hne : point ≠ pole) :
+  ‖RestrictionWork.sphereStereo scale pole point‖ ^ 2 = scale ^ 2 / ‖point - pole‖ ^ 2 - scale ^ 2 / 4
+'RestrictionWork.sphere_stereo_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.sphere_stereo_incidence.{u_1} {E : Type u_1} [NormedAddCommGroup E] [InnerProductSpace ℝ E] (scale : ℝ)
+  {pole point other : E} (hp : ‖pole‖ = 1) (hq : ‖point‖ = 1) (ht : ‖other‖ = 1) (hne : point ≠ pole)
+  (hne' : other ≠ pole) :
+  inner ℝ (RestrictionWork.sphereStereo scale pole point)
+      (RestrictionWork.sphereStereo scale pole other - RestrictionWork.sphereStereo scale pole point) =
+    scale ^ 2 * (inner ℝ (point - pole) (other - pole) - ‖other - pole‖ ^ 2) / (‖point - pole‖ ^ 2 * ‖other - pole‖ ^ 2)
+'RestrictionWork.sphere_stereo_incidence' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_collision_radon_factor {d : ℕ} {δ r : ℝ} {a u y w : RestrictionWork.Ambient d} (hδ : 0 < δ)
+  (hδhalf : δ ≤ 1 / 2) (ha : ‖a‖ ≤ 1 / 2) (hr : 0 < r) (hrhalf : r ≤ 1 / 2) (hu : ‖u‖ ≤ 1) (hy : ‖y‖ ≤ 1) (hw : ‖w‖ ≤ 1)
+  (hz : ‖u + y - w‖ ≤ 1) (hyu : y ≠ u) (hwu : w ≠ u) :
+  have P := RestrictionWork.shiftedCapPoint δ a r;
+  have k := δ * r;
+  have Y := RestrictionWork.sphereStereo k (P u) (P y);
+  have W := RestrictionWork.sphereStereo k (P u) (P w);
+  RestrictionWork.shiftedCollisionPhase δ a r u y w * RestrictionWork.shiftedCollisionHeightSum δ a r u y w =
+    4 * (‖P y - P u‖ / k) ^ 2 * (‖P w - P u‖ / k) ^ 2 * inner ℝ Y (W - Y)
+'RestrictionWork.shifted_collision_radon_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_stereo_chart_measure_bounds {d : ℕ} {δ r σ : ℝ} {a u : RestrictionWork.Ambient d} (hδ : 0 < δ)
+  (hδhalf : δ ≤ 1 / 2) (ha : ‖a‖ ≤ 1 / 2) (hr : 0 < r) (hrhalf : r ≤ 1 / 2) (hu : ‖u‖ ≤ 1) (hσ : 0 < σ)
+  (hPu : RestrictionWork.shiftedCapPoint δ a r u ≠ 0) :
+  have D := {v | ‖v‖ ≤ 1 ∧ σ ≤ ‖v - u‖};
+  have Ψ := RestrictionWork.shiftedStereoChart δ a r u hPu;
+  ∀ A ⊆ D,
+    MeasureTheory.Measure.map Ψ (MeasureTheory.volume.restrict A) ≤ 16 ^ d • MeasureTheory.volume.restrict (Ψ '' A) ∧
+      MeasureTheory.volume (Ψ '' A) ≤ ENNReal.ofReal (2 / σ ^ 2) ^ d * MeasureTheory.volume A
+'RestrictionWork.shifted_stereo_chart_measure_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_collision_double_strip_bound {d : ℕ} (hd : 1 ≤ d) {q σ : ℝ} (hq : 2 ≤ q) (hqd : q < ↑d + 1)
+  (hσ : 0 < σ) :
+  ∃ C < ⊤,
+    ∀ {δ r ε : ℝ} {a u : RestrictionWork.Ambient d},
+      0 < δ →
+        δ ≤ 1 / 2 →
+          ‖a‖ ≤ 1 / 2 →
+            0 < r →
+              r ≤ 1 / 2 →
+                ‖u‖ ≤ 1 →
+                  0 < ε →
+                    ∀ {A B : Set (RestrictionWork.Ambient d)},
+                      MeasurableSet A →
+                        MeasurableSet B →
+                          A ⊆ {v | ‖v‖ ≤ 1 ∧ σ ≤ ‖v - u‖} →
+                            B ⊆ {v | ‖v‖ ≤ 1 ∧ σ ≤ ‖v - u‖} →
+                              ∫⁻ (y : RestrictionWork.Ambient d) in A,
+                                  MeasureTheory.volume
+                                    (B ∩
+                                      {w | ‖u + y - w‖ ≤ 1 ∧ |RestrictionWork.shiftedCollisionPhase δ a r u y w| ≤ ε}) ≤
+                                C * ENNReal.ofReal ε * MeasureTheory.volume A ^ (1 - 1 / q) *
+                                  MeasureTheory.volume B ^ (1 - 1 / q)
+'RestrictionWork.shifted_collision_double_strip_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_collision_gaussian_row_bound {d : ℕ} (hd : 1 ≤ d) {q σ : ℝ} (hq : 2 ≤ q) (hqd : q < ↑d + 1)
+  (hσ : 0 < σ) :
+  ∃ C < ⊤,
+    ∀ {δ r h : ℝ} {a u : RestrictionWork.Ambient d},
+      0 < δ →
+        δ ≤ 1 / 2 →
+          ‖a‖ ≤ 1 / 2 →
+            0 < r →
+              r ≤ 1 / 2 →
+                ‖u‖ ≤ 1 →
+                  0 < h →
+                    ∀ {A B : Set (RestrictionWork.Ambient d)},
+                      MeasurableSet A →
+                        MeasurableSet B →
+                          A ⊆ {v | ‖v‖ ≤ 1 ∧ σ ≤ ‖v - u‖} →
+                            B ⊆ {v | ‖v‖ ≤ 1 ∧ σ ≤ ‖v - u‖} →
+                              ∫⁻ (y : RestrictionWork.Ambient d) in A,
+                                  ∫⁻ (w : RestrictionWork.Ambient d) in B ∩ {w | ‖u + y - w‖ ≤ 1},
+                                    ENNReal.ofReal
+                                      (RestrictionWork.radonGaussianKernel h
+                                        (RestrictionWork.shiftedCollisionPhase δ a r u y w / (2 * Real.pi))) ≤
+                                C * MeasureTheory.volume A ^ (1 - 1 / q) * MeasureTheory.volume B ^ (1 - 1 / q)
+'RestrictionWork.shifted_collision_gaussian_row_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.graph_extension_product_plancherel {d : ℕ} {φ : RestrictionWork.Ambient d → ℝ} (hφ : Measurable φ)
+  {f g : RestrictionWork.Ambient d → ℂ} (hf : Measurable f) (hg : Measurable g)
+  (hfi : MeasureTheory.Integrable f MeasureTheory.volume) (hgi : MeasureTheory.Integrable g MeasureTheory.volume)
+  (hfs : ∀ u ∉ Metric.ball 0 1, f u = 0) (hgs : ∀ u ∉ Metric.ball 0 1, g u = 0) {M : ℝ}
+  (hM : ∀ (u : RestrictionWork.Ambient d), ‖g u‖ ≤ M) (t : ℝ) :
+  ∫⁻ (x : RestrictionWork.Ambient d),
+      ‖RestrictionWork.graphExtension f φ (x, t) * RestrictionWork.graphExtension g φ (x, t)‖ₑ ^ 2 =
+    ENNReal.ofReal ((2 * Real.pi) ^ d) *
+      ∫⁻ (s : RestrictionWork.Ambient d), ‖RestrictionWork.graphProductConvolution φ f g t s‖ₑ ^ 2
+'RestrictionWork.graph_extension_product_plancherel' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.graph_extension_gaussian_product_energy_le {d : ℕ} {φ : RestrictionWork.Ambient d → ℝ}
+  (hφ : Measurable φ) {f g : RestrictionWork.Ambient d → ℂ} (hf : Measurable f) (hg : Measurable g)
+  (hfi : MeasureTheory.Integrable f MeasureTheory.volume) (hgi : MeasureTheory.Integrable g MeasureTheory.volume)
+  (hfs : ∀ u ∉ Metric.ball 0 1, f u = 0) (hgs : ∀ u ∉ Metric.ball 0 1, g u = 0) {M : ℝ}
+  (hM : ∀ (u : RestrictionWork.Ambient d), ‖g u‖ ≤ M) {h : ℝ} (hh : 0 < h) :
+  ∫⁻ (t : ℝ),
+      ‖RestrictionWork.radonGaussianSymbol h t‖ₑ *
+        ∫⁻ (x : RestrictionWork.Ambient d),
+          ‖RestrictionWork.graphExtension f φ (x, t) * RestrictionWork.graphExtension g φ (x, t)‖ₑ ^ 2 ≤
+    ENNReal.ofReal ((2 * Real.pi) ^ d) *
+      ∫⁻ (u : RestrictionWork.Ambient d) (y : RestrictionWork.Ambient d) (w : RestrictionWork.Ambient d),
+        ‖f u‖ₑ * ‖g y‖ₑ * (‖f (u + y - w)‖ₑ * ‖g w‖ₑ) *
+          ENNReal.ofReal (RestrictionWork.radonGaussianKernel h ((φ u + φ y - φ w - φ (u + y - w)) / (2 * Real.pi)))
+'RestrictionWork.graph_extension_gaussian_product_energy_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_graph_transverse_restricted_two {d : ℕ} (hd : 1 ≤ d) {q σ : ℝ} (hq : 2 ≤ q) (hqd : q < ↑d + 1)
+  (hσ : 0 < σ) :
+  ∃ C < ⊤,
+    ∀ {δ r : ℝ} {a : RestrictionWork.Ambient d},
+      0 < δ →
+        δ ≤ 1 / 2 →
+          ‖a‖ ≤ 1 / 2 →
+            0 < r →
+              r ≤ 1 / 2 →
+                ∀ {A B : Set (RestrictionWork.Ambient d)},
+                  MeasurableSet A →
+                    MeasurableSet B →
+                      A ⊆ Metric.ball 0 1 →
+                        B ⊆ Metric.ball 0 1 →
+                          (∀ u ∈ A, ∀ v ∈ B, σ ≤ ‖v - u‖) →
+                            ∀ {f g : RestrictionWork.Ambient d → ℂ},
+                              Measurable f →
+                                Measurable g →
+                                  MeasureTheory.MemLp f 2 MeasureTheory.volume →
+                                    (∀ u ∉ A, f u = 0) →
+                                      (∀ (v : RestrictionWork.Ambient d), ‖g v‖ ≤ B.indicator (fun x => 1) v) →
+                                        have φ := RestrictionWork.shiftedSphericalGraphPhase δ a r;
+                                        ∫⁻ (p : RestrictionWork.Ambient d × ℝ),
+                                            ‖RestrictionWork.graphExtension f φ p *
+                                                  RestrictionWork.graphExtension g φ p‖ₑ ^
+                                              2 ≤
+                                          (C * ∫⁻ (u : RestrictionWork.Ambient d), ‖f u‖ₑ ^ 2) *
+                                            MeasureTheory.volume B ^ (2 * (1 - 1 / q))
+'RestrictionWork.shifted_graph_transverse_restricted_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_graph_transverse_knapp_gain {d : ℕ} (hd : 2 ≤ d) {σ : ℝ} (hσ : 0 < σ) :
+  ∃ x,
+    0 < x ∧
+      x < 1 ∧
+        2 * ↑d / (↑d + 2) * (1 - x) < 1 / 2 ∧
+          ∃ C < ⊤,
+            ∀ {δ r : ℝ} {a : RestrictionWork.Ambient d},
+              0 < δ →
+                δ ≤ 1 / 2 →
+                  ‖a‖ ≤ 1 / 2 →
+                    0 < r →
+                      r ≤ 1 / 2 →
+                        ∀ {A B : Set (RestrictionWork.Ambient d)},
+                          MeasurableSet A →
+                            MeasurableSet B →
+                              A ⊆ Metric.ball 0 1 →
+                                B ⊆ Metric.ball 0 1 →
+                                  (∀ u ∈ A, ∀ v ∈ B, σ ≤ ‖v - u‖) →
+                                    ∀ {f g : RestrictionWork.Ambient d → ℂ},
+                                      Measurable f →
+                                        Measurable g →
+                                          (∀ (u : RestrictionWork.Ambient d), ‖f u‖ ≤ A.indicator (fun x => 1) u) →
+                                            (∀ (v : RestrictionWork.Ambient d), ‖g v‖ ≤ B.indicator (fun x => 1) v) →
+                                              have φ := RestrictionWork.shiftedSphericalGraphPhase δ a r;
+                                              MeasureTheory.eLpNorm
+                                                  (RestrictionWork.graphExtension f φ *
+                                                    RestrictionWork.graphExtension g φ)
+                                                  2 MeasureTheory.volume ≤
+                                                C * (MeasureTheory.volume A * MeasureTheory.volume B) ^ x
+'RestrictionWork.shifted_graph_transverse_knapp_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_graph_restricted_knapp_gain {d : ℕ} (hd : 2 ≤ d) {σ y : ℝ} (hσ : 0 < σ) (hy : 0 < y)
+  (hyD : y < ↑d / (↑d + 1)) :
+  ∃ x, RestrictionWork.knappProductInput d y < x ∧ ∃ C < ⊤, RestrictionWork.ShiftedGraphRestrictedProductBound d σ y x C
+'RestrictionWork.shifted_graph_restricted_knapp_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.graph_rebase_product_norm_transfer {d : ℕ} {φ : RestrictionWork.Ambient d → ℝ} (hφ : Measurable φ)
+  {a l : RestrictionWork.Ambient d} {r y : ℝ} (hr : 0 < r) (ha : ‖a‖ ≤ 1 / 2) (hrhalf : r ≤ 1 / 2) (hy : 0 ≤ y)
+  {f g : RestrictionWork.Ambient d → ℂ} (hf : MeasureTheory.MemLp f 1 (RestrictionWork.patchMeasure d))
+  (hg : MeasureTheory.MemLp g 1 (RestrictionWork.patchMeasure d)) :
+  ENNReal.ofReal (r ^ d * r ^ d) *
+      MeasureTheory.eLpNorm
+        (RestrictionWork.graphExtension f (RestrictionWork.graphRebasePhase φ a l r) *
+          RestrictionWork.graphExtension g (RestrictionWork.graphRebasePhase φ a l r))
+        (ENNReal.ofReal y)⁻¹ MeasureTheory.volume =
+    ENNReal.ofReal (r ^ (d + 2)) ^ y *
+      MeasureTheory.eLpNorm
+        (RestrictionWork.graphExtension (RestrictionWork.graphRebaseInput a r f) φ *
+          RestrictionWork.graphExtension (RestrictionWork.graphRebaseInput a r g) φ)
+        (ENNReal.ofReal y)⁻¹ MeasureTheory.volume
+'RestrictionWork.graph_rebase_product_norm_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.shifted_graph_whitney_pair_bound {d : ℕ} (hd : 2 ≤ d) {σ y : ℝ} (hσ : 0 < σ) (hy : 0 < y)
+  (hyD : y < ↑d / (↑d + 1)) :
+  ∃ x,
+    RestrictionWork.knappProductInput d y < x ∧
+      ∃ C < ⊤,
+        ∀ {δ r : ℝ} {a : RestrictionWork.Ambient d},
+          0 < δ →
+            δ ≤ 1 / 2 →
+              ‖a‖ ≤ 1 / 2 →
+                0 < r →
+                  r ≤ 1 / 2 →
+                    ∀ {A B : Set (RestrictionWork.Ambient d)},
+                      MeasurableSet A →
+                        MeasurableSet B →
+                          A ⊆ Metric.ball a r →
+                            B ⊆ Metric.ball a r →
+                              (∀ u ∈ A, ∀ v ∈ B, σ * r ≤ ‖v - u‖) →
+                                ∀ {f g : RestrictionWork.Ambient d → ℂ},
+                                  Measurable f →
+                                    Measurable g →
+                                      (∀ (u : RestrictionWork.Ambient d), ‖f u‖ ≤ A.indicator (fun x => 1) u) →
+                                        (∀ (v : RestrictionWork.Ambient d), ‖g v‖ ≤ B.indicator (fun x => 1) v) →
+                                          have φ := RestrictionWork.sphericalGraphPhase δ;
+                                          MeasureTheory.eLpNorm
+                                              (RestrictionWork.graphExtension f φ * RestrictionWork.graphExtension g φ)
+                                              (ENNReal.ofReal y)⁻¹ MeasureTheory.volume ≤
+                                            C *
+                                                ENNReal.ofReal (r ^ d) ^
+                                                  (-(2 * (x - RestrictionWork.knappProductInput d y))) *
+                                              (MeasureTheory.volume A * MeasureTheory.volume B) ^ x
+'RestrictionWork.shifted_graph_whitney_pair_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.dyadic_whitney_pair_distance_ge {d j : ℕ} {p : (Fin d → ℤ) × (Fin d → ℤ)}
+  (hp : p ∈ RestrictionWork.dyadicWhitneyPairs d j) {u v : RestrictionWork.Ambient d}
+  (hu : u ∈ RestrictionWork.dyadicParameterCell (j + 1) p.1)
+  (hv : v ∈ RestrictionWork.dyadicParameterCell (j + 1) p.2) : (2 ^ (j + 1))⁻¹ ≤ ‖v - u‖
+'RestrictionWork.dyadic_whitney_pair_distance_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.dyadic_whitney_pair_localize {d j : ℕ} (hd : 1 ≤ d) {p : (Fin d → ℤ) × (Fin d → ℤ)}
+  (hp : p ∈ RestrictionWork.dyadicWhitneyPairs d j) {A B : Set (RestrictionWork.Ambient d)}
+  (hA : A ⊆ Metric.ball 0 (1 / 4)) (hB : B ⊆ Metric.ball 0 (1 / 4))
+  (hAp : A ⊆ RestrictionWork.dyadicParameterCell (j + 1) p.1)
+  (hBp : B ⊆ RestrictionWork.dyadicParameterCell (j + 1) p.2) (hne : A.Nonempty) :
+  ∃ a r,
+    ‖a‖ ≤ 1 / 2 ∧
+      0 < r ∧
+        r ≤ 1 / 2 ∧
+          (2 ^ (j + 1))⁻¹ ≤ r ∧ A ⊆ Metric.ball a r ∧ B ⊆ Metric.ball a r ∧ ∀ u ∈ A, ∀ v ∈ B, (5 * ↑d)⁻¹ * r ≤ ‖v - u‖
+'RestrictionWork.dyadic_whitney_pair_localize' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.graph_extension_whitney_hasSum {d : ℕ} (hd : 1 ≤ d) {φ : RestrictionWork.Ambient d → ℝ}
+  (hφ : Measurable φ) {f g : RestrictionWork.Ambient d → ℂ}
+  (hf : MeasureTheory.Integrable f (RestrictionWork.patchMeasure d))
+  (hg : MeasureTheory.Integrable g (RestrictionWork.patchMeasure d)) (z : RestrictionWork.Ambient d × ℝ) :
+  HasSum (fun j => RestrictionWork.graphWhitneyLayer j φ f g z)
+    (RestrictionWork.graphExtension f φ z * RestrictionWork.graphExtension g φ z)
+'RestrictionWork.graph_extension_whitney_hasSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.card_dyadic_whitney_frequency_overlap {d : ℕ} (j b : ℕ) (s : RestrictionWork.Ambient d) :
+  {p ∈ RestrictionWork.dyadicWhitneyPairs d j | s ∈ RestrictionWork.dyadicPairFrequency j b p}.card ≤
+    7 ^ d * (2 * b + 1) ^ d
+'RestrictionWork.card_dyadic_whitney_frequency_overlap' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.graph_whitney_layer_eLpNorm {d : ℕ} {y : ℝ} (hy₂ : 1 / 2 ≤ y) (hy₁ : y < 1) :
+  ∃ C < ⊤,
+    ∀ (j : ℕ) {φ : RestrictionWork.Ambient d → ℝ},
+      Measurable φ →
+        ∀ {f g : RestrictionWork.Ambient d → ℂ},
+          Measurable f →
+            Measurable g →
+              MeasureTheory.Integrable f MeasureTheory.volume →
+                MeasureTheory.Integrable g MeasureTheory.volume →
+                  (∀ u ∉ Metric.ball 0 1, f u = 0) →
+                    (∀ u ∉ Metric.ball 0 1, g u = 0) →
+                      ∀ {M : ℝ},
+                        (∀ (u : RestrictionWork.Ambient d), ‖g u‖ ≤ M) →
+                          MeasureTheory.eLpNorm (RestrictionWork.graphWhitneyLayer j φ f g) (ENNReal.ofReal y)⁻¹
+                              MeasureTheory.volume ≤
+                            C *
+                              (∑ p ∈ RestrictionWork.dyadicWhitneyPairs d j,
+                                  MeasureTheory.eLpNorm (RestrictionWork.graphWhitneyTerm j p φ f g)
+                                      (ENNReal.ofReal y)⁻¹ MeasureTheory.volume ^
+                                    y⁻¹) ^
+                                y
+'RestrictionWork.graph_whitney_layer_eLpNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.dyadic_whitney_mass_le {d : ℕ} (A : Set (RestrictionWork.Ambient d)) (j : ℕ)
+  (p : (Fin d → ℤ) × (Fin d → ℤ)) : RestrictionWork.dyadicWhitneyMass A j p ≤ 2⁻¹ ^ d * (2⁻¹ ^ d) ^ j
+'RestrictionWork.dyadic_whitney_mass_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.dyadic_whitney_mass_sum_le {d : ℕ} (A : Set (RestrictionWork.Ambient d)) (j : ℕ) :
+  ∑ p ∈ RestrictionWork.dyadicWhitneyPairs d j, RestrictionWork.dyadicWhitneyMass A j p ≤
+    ↑(2 * 7 ^ d) * MeasureTheory.volume A
+'RestrictionWork.dyadic_whitney_mass_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.dyadic_whitney_mass_tsum_le {d : ℕ} (hd : 1 ≤ d) {α k y : ℝ} (hy : 0 < y) (hyk : y < k) (hkα : k < α) :
+  ∃ C < ⊤,
+    ∀ (A : Set (RestrictionWork.Ambient d)),
+      0 < MeasureTheory.volume A →
+        MeasureTheory.volume A < ⊤ →
+          ∑' (j : ℕ),
+              ((2⁻¹ ^ d) ^ j) ^ (-(α - k)) *
+                (∑ p ∈ RestrictionWork.dyadicWhitneyPairs d j, RestrictionWork.dyadicWhitneyMass A j p ^ (α / y)) ^ y ≤
+            C * MeasureTheory.volume A ^ k
+'RestrictionWork.dyadic_whitney_mass_tsum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.spherical_graph_restricted_knapp_at_le_two {d : ℕ} (hd : 2 ≤ d) {y : ℝ} (hy₂ : 1 / 2 ≤ y)
+  (hyD : y < ↑d / (↑d + 1)) : ∃ C < ⊤, RestrictionWork.SphericalGraphRestrictedKnapp d y C
+'RestrictionWork.spherical_graph_restricted_knapp_at_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.spherical_graph_restricted_knapp_below_half {d : ℕ} (hd : 2 ≤ d) {y : ℝ} (hy : 0 < y) (hy₂ : y < 1 / 2)
+  {C : ENNReal} (hC : RestrictionWork.SphericalGraphRestrictedKnapp d (1 / 2) C) :
+  RestrictionWork.SphericalGraphRestrictedKnapp d y (C ^ (2 * y))
+'RestrictionWork.spherical_graph_restricted_knapp_below_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.spherical_graph_restricted_knapp_linear {d : ℕ} (hd : 2 ≤ d) {y : ℝ} (hy : 0 < y)
+  (hyD : y < ↑d / (↑d + 1)) :
+  ∃ C < ⊤,
+    ∀ {δ : ℝ},
+      0 < δ →
+        δ ≤ 1 / 2 →
+          ∀ {A : Set (RestrictionWork.Ambient d)},
+            MeasurableSet A →
+              A ⊆ Metric.ball 0 (1 / 4) →
+                ∀ {f : RestrictionWork.Ambient d → ℂ},
+                  Measurable f →
+                    (∀ (u : RestrictionWork.Ambient d), ‖f u‖ ≤ A.indicator (fun x => 1) u) →
+                      MeasureTheory.eLpNorm (RestrictionWork.graphExtension f (RestrictionWork.sphericalGraphPhase δ))
+                          (ENNReal.ofReal (2 / y)) MeasureTheory.volume ≤
+                        C * MeasureTheory.volume A ^ RestrictionWork.knappProductInput d y
+'RestrictionWork.spherical_graph_restricted_knapp_linear' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.spherical_graph_knapp_atom_pairing_le {d : ℕ} (hd : 2 ≤ d) {y yl yh p q' b c : ℝ} (hyl : 0 < yl)
+  (hly : yl < y) (hyh : y < yh) (hyD : yh < ↑d / (↑d + 1)) (hx : p * RestrictionWork.knappProductInput d y = 1)
+  (hz : q' * (1 - y / 2) = 1) (hb : 0 ≤ b) (hb₁ : b ≤ 1) (hbl : b ≤ RestrictionWork.knappProductInput d yl)
+  (hbh : b ≤ RestrictionWork.knappProductInput d yh) (hcl : 1 - b ≤ 1 - yl / 2) (hch : 1 - b ≤ 1 - yh / 2)
+  (hclow : c ≤ y / 2 - yl / 2) (hchigh : c ≤ yh / 2 - y / 2) :
+  ∃ C < ⊤,
+    ∀ {δ : ℝ},
+      0 < δ →
+        δ ≤ 1 / 2 →
+          ∀ (j k : ℤ) {A : Set (RestrictionWork.Ambient d)} {B : Set (RestrictionWork.Ambient d × ℝ)},
+            MeasurableSet A →
+              A ⊆ Metric.ball 0 (1 / 4) →
+                MeasurableSet B →
+                  ∀ {f : RestrictionWork.Ambient d → ℂ} {g : RestrictionWork.Ambient d × ℝ → ℂ},
+                    Measurable f →
+                      Measurable g →
+                        (∀ (u : RestrictionWork.Ambient d), ‖f u‖ ≤ A.indicator (fun x => 2 ^ (↑j + 1)) u) →
+                          (∀ (z : RestrictionWork.Ambient d × ℝ), ‖g z‖ ≤ B.indicator (fun x => 2 ^ (↑k + 1)) z) →
+                            2 ^ (p * ↑j) * MeasureTheory.volume A ≤ 1 →
+                              2 ^ (q' * ↑k) * MeasureTheory.volume B ≤ 1 →
+                                ‖∫ (z : RestrictionWork.Ambient d × ℝ),
+                                      g z *
+                                        RestrictionWork.graphExtension f (RestrictionWork.sphericalGraphPhase δ) z‖ₑ ≤
+                                  C *
+                                      ((2 ^ (p * ↑j) * MeasureTheory.volume A) ^ b *
+                                        (2 ^ (q' * ↑k) * MeasureTheory.volume B) ^ (1 - b)) *
+                                    ENNReal.ofReal (2 ^ (-c * |(↑d + 2) / ↑d * p * ↑j + q' * ↑k|))
+'RestrictionWork.spherical_graph_knapp_atom_pairing_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.dyadic_exponential_kernel_sum_le {a c : ℝ} (ha : 0 < a) (hc : 0 < c) :
+  ∃ C < ⊤, ∀ (b : ℝ) (I : Finset ℤ), ∑ i ∈ I, ENNReal.ofReal (2 ^ (-c * |a * ↑i + b|)) ≤ C
+'RestrictionWork.dyadic_exponential_kernel_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.weighted_matrix_rpow_sum_le_of_normalized.{u_1, u_2} {ι : Type u_1} {κ : Type u_2} (I : Finset ι)
+  (J : Finset κ) (K : ι → κ → ENNReal) (a : ι → ENNReal) (b : κ → ENNReal) {θ : ℝ} (hθ : 0 < θ) (hθ₁ : θ < 1)
+  {C : ENNReal} (hrow : ∀ i ∈ I, ∑ j ∈ J, K i j ≤ C) (hcol : ∀ j ∈ J, ∑ i ∈ I, K i j ≤ C) (ha : ∑ i ∈ I, a i ≤ 1)
+  (hb : ∑ j ∈ J, b j ≤ 1) : ∑ i ∈ I, ∑ j ∈ J, K i j * a i ^ θ * b j ^ (1 - θ) ≤ C
+'RestrictionWork.weighted_matrix_rpow_sum_le_of_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.spherical_graph_knapp_unit_pairing {d : ℕ} (hd : 2 ≤ d) {y : ℝ} (hy : 0 < y) (hyD : y < ↑d / (↑d + 1)) :
+  ∃ C < ⊤,
+    ∀ {δ : ℝ},
+      0 < δ →
+        δ ≤ 1 / 2 →
+          ∀ {f : RestrictionWork.Ambient d → ℂ},
+            Measurable f →
+              MeasureTheory.Integrable f (RestrictionWork.patchMeasure d) →
+                (∀ u ∉ Metric.ball 0 (1 / 4), f u = 0) →
+                  MeasureTheory.eLpNorm f (ENNReal.ofReal (RestrictionWork.knappProductInput d y)⁻¹)
+                        (RestrictionWork.patchMeasure d) ≤
+                      1 →
+                    ∀ {g : RestrictionWork.Ambient d × ℝ → ℂ},
+                      Measurable g →
+                        MeasureTheory.Integrable g MeasureTheory.volume →
+                          MeasureTheory.eLpNorm g (ENNReal.ofReal (1 - y / 2)⁻¹) MeasureTheory.volume ≤ 1 →
+                            ‖∫ (z : RestrictionWork.Ambient d × ℝ),
+                                  g z * RestrictionWork.graphExtension f (RestrictionWork.sphericalGraphPhase δ) z‖ₑ ≤
+                              C
+'RestrictionWork.spherical_graph_knapp_unit_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.graph_extension_le_of_unit_pairing {d : ℕ} {p q : ℝ} (hp : 1 ≤ p) (hq : 1 < q)
+  {φ : RestrictionWork.Ambient d → ℝ} (hφ : Measurable φ) {C : ENNReal}
+  (Hunit :
+    ∀ {f : RestrictionWork.Ambient d → ℂ} {g : RestrictionWork.Ambient d × ℝ → ℂ},
+      Measurable f →
+        MeasureTheory.Integrable f (RestrictionWork.patchMeasure d) →
+          (∀ u ∉ Metric.ball 0 (1 / 4), f u = 0) →
+            MeasureTheory.eLpNorm f (ENNReal.ofReal p) (RestrictionWork.patchMeasure d) ≤ 1 →
+              Measurable g →
+                MeasureTheory.Integrable g MeasureTheory.volume →
+                  MeasureTheory.eLpNorm g (ENNReal.ofReal (q / (q - 1))) MeasureTheory.volume ≤ 1 →
+                    ‖∫ (z : RestrictionWork.Ambient d × ℝ), g z * RestrictionWork.graphExtension f φ z‖ₑ ≤ C)
+  {f : RestrictionWork.Ambient d → ℂ} (hf : Measurable f)
+  (hfp : MeasureTheory.MemLp f (ENNReal.ofReal p) (RestrictionWork.patchMeasure d))
+  (hfs : ∀ u ∉ Metric.ball 0 (1 / 4), f u = 0) :
+  MeasureTheory.eLpNorm (RestrictionWork.graphExtension f φ) (ENNReal.ofReal q) MeasureTheory.volume ≤
+    C * MeasureTheory.eLpNorm f (ENNReal.ofReal p) (RestrictionWork.patchMeasure d)
+'RestrictionWork.graph_extension_le_of_unit_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.spherical_graph_knapp_strong {d : ℕ} (hd : 2 ≤ d) {y : ℝ} (hy : 0 < y) (hyD : y < ↑d / (↑d + 1)) :
+  ∃ C < ⊤,
+    ∀ {δ : ℝ},
+      0 < δ →
+        δ ≤ 1 / 2 →
+          ∀ (f : RestrictionWork.Ambient d → ℂ),
+            Measurable f →
+              MeasureTheory.MemLp f (ENNReal.ofReal (RestrictionWork.knappProductInput d y)⁻¹)
+                  (RestrictionWork.patchMeasure d) →
+                (∀ v ∉ Metric.ball 0 (1 / 4), f v = 0) →
+                  MeasureTheory.eLpNorm (RestrictionWork.graphExtension f (RestrictionWork.sphericalGraphPhase δ))
+                      (ENNReal.ofReal (2 / y)) MeasureTheory.volume ≤
+                    C *
+                      MeasureTheory.eLpNorm f (ENNReal.ofReal (RestrictionWork.knappProductInput d y)⁻¹)
+                        (RestrictionWork.patchMeasure d)
+'RestrictionWork.spherical_graph_knapp_strong' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.cap_area_identity {d : ℕ} {δ : ℝ} (hδ : 0 < δ) (hδ₁ : δ ≤ 1 / 2) : RestrictionWork.CapAreaIdentity d δ
+'RestrictionWork.cap_area_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.original_cap_rescaling {d : ℕ} {δ : ℝ} (hδ : 0 < δ) (hδ₁ : δ ≤ 1 / 2)
+  {g : RestrictionWork.Ambient d → ℂ} (hg : MeasureTheory.Integrable g (RestrictionWork.patchMeasure d))
+  (z : RestrictionWork.Ambient d × ℝ) :
+  MeasureTheory.Integrable
+      (fun ω =>
+        RestrictionWork.capSphereLift δ g ω *
+          RestrictionWork.kernel
+            ((2 * Real.pi)⁻¹ • RestrictionWork.physicalEmbed (RestrictionWork.capPhysicalScale δ z)) ω)
+      (RestrictionWork.sphereMeasure (d + 1)) ∧
+    RestrictionWork.extension (RestrictionWork.capSphereLift δ g)
+        ((2 * Real.pi)⁻¹ • RestrictionWork.physicalEmbed (RestrictionWork.capPhysicalScale δ z)) =
+      ↑(δ ^ d) * Complex.exp (↑(-2 * z.2 / δ ^ 2) * Complex.I) * RestrictionWork.sphericalPatchExtension δ g z
+'RestrictionWork.original_cap_rescaling' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.original_cap_physical_measure {d : ℕ} {δ : ℝ} (hδ : 0 < δ) :
+  MeasureTheory.Measure.map
+      (fun z => (2 * Real.pi)⁻¹ • RestrictionWork.physicalEmbed (RestrictionWork.capPhysicalScale δ z))
+      MeasureTheory.volume =
+    ENNReal.ofReal ((2 * Real.pi) ^ (d + 1) * δ ^ (d + 2) / 2) • MeasureTheory.volume
+'RestrictionWork.original_cap_physical_measure' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.original_cap_reverse {d : ℕ} {δ : ℝ} (hδ : 0 < δ) (hδ₁ : δ ≤ 1 / 2) {p : ENNReal}
+  {f : ↑(RestrictionWork.UnitSphere (d + 1)) → ℂ} (hfm : Measurable f)
+  (hf : MeasureTheory.MemLp f p (RestrictionWork.sphereMeasure (d + 1)))
+  (hfs : ∀ ω ∉ RestrictionWork.originalSmallCap δ, f ω = 0) :
+  ∃ g,
+    Measurable g ∧
+      MeasureTheory.MemLp g p (RestrictionWork.patchMeasure d) ∧
+        (∀ v ∉ Metric.ball 0 (1 / 4), g v = 0) ∧
+          RestrictionWork.capSphereLift δ g = f ∧
+            MeasureTheory.eLpNorm g p (RestrictionWork.patchMeasure d) ≤
+              2 * (ENNReal.ofReal (δ ^ d) ^ p.toReal⁻¹)⁻¹ *
+                MeasureTheory.eLpNorm f p (RestrictionWork.sphereMeasure (d + 1))
+'RestrictionWork.original_cap_reverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.original_small_cap_bound_of_graph {d : ℕ} {δ : ℝ} (hδ : 0 < δ) (hδ₁ : δ ≤ 1 / 2) {p q : ENNReal}
+  (hp : 1 ≤ p) {C : ENNReal} (hC : C < ⊤)
+  (hgraph :
+    ∀ (g : RestrictionWork.Ambient d → ℂ),
+      Measurable g →
+        MeasureTheory.MemLp g p (RestrictionWork.patchMeasure d) →
+          (∀ v ∉ Metric.ball 0 (1 / 4), g v = 0) →
+            MeasureTheory.eLpNorm (RestrictionWork.graphExtension g (RestrictionWork.sphericalGraphPhase δ)) q
+                MeasureTheory.volume ≤
+              C * MeasureTheory.eLpNorm g p (RestrictionWork.patchMeasure d)) :
+  ∃ K < ⊤,
+    ∀ (f : ↑(RestrictionWork.UnitSphere (d + 1)) → ℂ),
+      Measurable f →
+        MeasureTheory.MemLp f p (RestrictionWork.sphereMeasure (d + 1)) →
+          (∀ ω ∉ RestrictionWork.originalSmallCap δ, f ω = 0) →
+            MeasureTheory.eLpNorm (RestrictionWork.extension f) q MeasureTheory.volume ≤
+              K * MeasureTheory.eLpNorm f p (RestrictionWork.sphereMeasure (d + 1))
+'RestrictionWork.original_small_cap_bound_of_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.original_small_cap_contains_ball {d : ℕ} {δ : ℝ} (hδ : 0 < δ) (hδ₁ : δ ≤ 1 / 2) :
+  ∃ pole, Metric.ball pole (δ / 4) ⊆ RestrictionWork.originalSmallCap δ
+'RestrictionWork.original_small_cap_contains_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.sphere_isometry_measurePreserving {n : ℕ}
+  (e : RestrictionWork.Ambient n ≃ₗᵢ[ℝ] RestrictionWork.Ambient n) :
+  MeasureTheory.MeasurePreserving (⇑(RestrictionWork.sphereIsometry e)) (RestrictionWork.sphereMeasure n)
+    (RestrictionWork.sphereMeasure n)
+'RestrictionWork.sphere_isometry_measurePreserving' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.extension_comp_sphereIsometry {n : ℕ} (e : RestrictionWork.Ambient n ≃ₗᵢ[ℝ] RestrictionWork.Ambient n)
+  (f : ↑(RestrictionWork.UnitSphere n) → ℂ) :
+  RestrictionWork.extension (f ∘ ⇑(RestrictionWork.sphereIsometry e)) = RestrictionWork.extension f ∘ ⇑e
+'RestrictionWork.extension_comp_sphereIsometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.boundedSphereExtension_of_ball_bound {n : ℕ} {p q : ENNReal} (hp : 1 ≤ p) (hq : 1 ≤ q)
+  (pole : ↑(RestrictionWork.UnitSphere n)) {ε : ℝ} (hε : 0 < ε) {C : ENNReal} (hC : C < ⊤)
+  (hlocal :
+    ∀ (f : ↑(RestrictionWork.UnitSphere n) → ℂ),
+      Measurable f →
+        MeasureTheory.MemLp f p (RestrictionWork.sphereMeasure n) →
+          (∀ w ∉ Metric.ball pole ε, f w = 0) →
+            MeasureTheory.eLpNorm (RestrictionWork.extension f) q MeasureTheory.volume ≤
+              C * MeasureTheory.eLpNorm f p (RestrictionWork.sphereMeasure n)) :
+  RestrictionWork.BoundedSphereExtension n p q
+'RestrictionWork.boundedSphereExtension_of_ball_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.boundedSphereExtension_of_quarter_graph {d : ℕ} {δ : ℝ} (hδ : 0 < δ) (hδ₁ : δ ≤ 1 / 2) {p q : ENNReal}
+  (hp : 1 ≤ p) (hq : 1 ≤ q) {C : ENNReal} (hC : C < ⊤)
+  (hgraph :
+    ∀ (g : RestrictionWork.Ambient d → ℂ),
+      Measurable g →
+        MeasureTheory.MemLp g p (RestrictionWork.patchMeasure d) →
+          (∀ v ∉ Metric.ball 0 (1 / 4), g v = 0) →
+            MeasureTheory.eLpNorm (RestrictionWork.graphExtension g (RestrictionWork.sphericalGraphPhase δ)) q
+                MeasureTheory.volume ≤
+              C * MeasureTheory.eLpNorm g p (RestrictionWork.patchMeasure d)) :
+  RestrictionWork.BoundedSphereExtension (d + 1) p q
+'RestrictionWork.boundedSphereExtension_of_quarter_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.admissible_finite_knapp_reparam {d : ℕ} (hd : 2 ≤ d) {p q : ENNReal} (hqfin : q ≠ ⊤)
+  (hadm : RestrictionWork.AdmissibleExponents (d + 1) p q)
+  (hline : q⁻¹.toReal = (↑(d + 1) - 1) / (↑(d + 1) + 1) * (1 - p⁻¹.toReal)) :
+  ∃ y,
+    0 < y ∧
+      y < ↑d / (↑d + 1) ∧ p = ENNReal.ofReal (RestrictionWork.knappProductInput d y)⁻¹ ∧ q = ENNReal.ofReal (2 / y)
+'RestrictionWork.admissible_finite_knapp_reparam' depends on axioms: [propext, Classical.choice, Quot.sound]
+RestrictionWork.fullSphereRestriction_of_graph_strong
+  (hstrong :
+    ∀ (d : ℕ),
+      2 ≤ d →
+        ∀ (y : ℝ),
+          0 < y →
+            y < ↑d / (↑d + 1) →
+              ∃ C < ⊤,
+                ∀ (g : RestrictionWork.Ambient d → ℂ),
+                  Measurable g →
+                    MeasureTheory.MemLp g (ENNReal.ofReal (RestrictionWork.knappProductInput d y)⁻¹)
+                        (RestrictionWork.patchMeasure d) →
+                      (∀ v ∉ Metric.ball 0 (1 / 4), g v = 0) →
+                        MeasureTheory.eLpNorm
+                            (RestrictionWork.graphExtension g (RestrictionWork.sphericalGraphPhase (1 / 2)))
+                            (ENNReal.ofReal (2 / y)) MeasureTheory.volume ≤
+                          C *
+                            MeasureTheory.eLpNorm g (ENNReal.ofReal (RestrictionWork.knappProductInput d y)⁻¹)
+                              (RestrictionWork.patchMeasure d)) :
+  RestrictionWork.FullSphereRestrictionConjecture
+'RestrictionWork.fullSphereRestriction_of_graph_strong' depends on axioms: [propext, Classical.choice, Quot.sound]

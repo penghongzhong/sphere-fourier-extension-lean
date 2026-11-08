@@ -1,0 +1,3 @@
+import RestrictionWork.ExtensionBound
+set_option autoImplicit false
+

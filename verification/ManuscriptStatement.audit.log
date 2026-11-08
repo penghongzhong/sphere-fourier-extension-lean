@@ -1,0 +1,119 @@
+theorem JSP001040Manuscript.finiteKnappBoundary : ∀ (n : ℕ),
+  3 ≤ n →
+    ∀ (p q : ℝ≥0∞),
+      1 ≤ p →
+        1 ≤ q →
+          ENNReal.ofReal (2 * ↑n / (↑n - 1)) < q →
+            q = ENNReal.ofReal ((↑n + 1) / (↑n - 1)) * (1 - p⁻¹)⁻¹ →
+              q < ∞ →
+                ∃ C,
+                  ∀ (f : ↑(RestrictionWork.UnitSphere n) → ℂ),
+                    MemLp f p (JSP001040Manuscript.surfaceMeasure n) →
+                      MemLp (JSP001040Manuscript.extension f) q volume ∧
+                        eLpNorm (JSP001040Manuscript.extension f) q volume ≤
+                          ↑C * eLpNorm f p (JSP001040Manuscript.surfaceMeasure n) :=
+fun n hn p q hp hq hrad hline hqfin =>
+  id
+    (have hrec := (JSP001040Manuscript.knappCoordinates n hn p q hp hq).right.mpr hline;
+    have hadm := ⟨hp, ⟨hq, ⟨hrad, Eq.le hrec⟩⟩⟩;
+    RestrictionWork.finiteKnappBoundary_of_quarter_graph
+      (fun d hd p₀ q₀ hfin ha hl =>
+        Exists.casesOn (RestrictionWork.admissible_finite_knapp_reparam hd hfin ha hl) fun y h =>
+          And.casesOn h fun hy right =>
+            And.casesOn right fun hyD right =>
+              And.casesOn right fun hp₀ hq₀ =>
+                Exists.casesOn (RestrictionWork.spherical_graph_knapp_strong hd hy hyD) fun C h =>
+                  And.casesOn h fun hC H =>
+                    Eq.mpr
+                      (id
+                        (congrArg
+                          (fun _a =>
+                            ∃ C < ∞,
+                              ∀ (g : RestrictionWork.Ambient d → ℂ),
+                                Measurable g →
+                                  MemLp g _a (RestrictionWork.patchMeasure d) →
+                                    (∀ v ∉ Metric.ball 0 (1 / 4), g v = 0) →
+                                      eLpNorm
+                                          (RestrictionWork.graphExtension g
+                                            (RestrictionWork.sphericalGraphPhase (1 / 2)))
+                                          q₀ volume ≤
+                                        C * eLpNorm g _a (RestrictionWork.patchMeasure d))
+                          hp₀))
+                      (Eq.mpr
+                        (id
+                          (congrArg
+                            (fun _a =>
+                              ∃ C < ∞,
+                                ∀ (g : RestrictionWork.Ambient d → ℂ),
+                                  Measurable g →
+                                    MemLp g (ENNReal.ofReal (RestrictionWork.knappProductInput d y)⁻¹)
+                                        (RestrictionWork.patchMeasure d) →
+                                      (∀ v ∉ Metric.ball 0 (1 / 4), g v = 0) →
+                                        eLpNorm
+                                            (RestrictionWork.graphExtension g
+                                              (RestrictionWork.sphericalGraphPhase (1 / 2)))
+                                            _a volume ≤
+                                          C *
+                                            eLpNorm g (ENNReal.ofReal (RestrictionWork.knappProductInput d y)⁻¹)
+                                              (RestrictionWork.patchMeasure d))
+                            hq₀))
+                        (Exists.intro C
+                          ⟨hC,
+                            H
+                              (Mathlib.Meta.NormNum.isNNRat_lt_true
+                                (Mathlib.Meta.NormNum.IsNat.to_isNNRat
+                                  (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero))
+                                (Mathlib.Meta.NormNum.isNNRat_div
+                                  (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+                                    (Mathlib.Meta.NormNum.IsNat.to_isNNRat
+                                      (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one))
+                                    (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                                      (Mathlib.Meta.NormNum.IsNat.to_isNNRat
+                                        (Mathlib.Meta.NormNum.isNat_ofNat ℝ (Eq.refl 2))))
+                                    (Eq.refl (Nat.mul 1 1)) (Eq.refl 2)))
+                                (Eq.refl true))
+                              le_rfl⟩)))
+      n hn p q (LT.lt.ne hqfin) hadm hrec)
+'JSP001040Manuscript.finiteKnappBoundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem JSP001040Manuscript.fullRange : ∀ (n : ℕ),
+  3 ≤ n →
+    ∀ (p q : ℝ≥0∞),
+      1 ≤ p →
+        1 ≤ q →
+          ((∃ C,
+              ∀ (f : ↑(RestrictionWork.UnitSphere n) → ℂ),
+                MemLp f p (JSP001040Manuscript.surfaceMeasure n) →
+                  MemLp (JSP001040Manuscript.extension f) q volume ∧
+                    eLpNorm (JSP001040Manuscript.extension f) q volume ≤
+                      ↑C * eLpNorm f p (JSP001040Manuscript.surfaceMeasure n)) ↔
+            ENNReal.ofReal (2 * ↑n / (↑n - 1)) < q ∧ ENNReal.ofReal ((↑n + 1) / (↑n - 1)) * (1 - p⁻¹)⁻¹ ≤ q) :=
+fun n hn p q hp hq =>
+  id
+    (have hcoords := JSP001040Manuscript.knappCoordinates n hn p q hp hq;
+    {
+      mp := fun H =>
+        have hadm := RestrictionWork.original_sphere_necessity n hn p q hp hq H;
+        ⟨hadm.right.right.left, hcoords.left.mp hadm.right.right.right⟩,
+      mpr := fun a =>
+        And.casesOn a fun hrad hbound =>
+          if hqt : q = ∞ then
+            Eq.ndrec (motive := fun q =>
+              1 ≤ q →
+                (q⁻¹.toReal ≤ (↑n - 1) / (↑n + 1) * (1 - p⁻¹.toReal) ↔
+                      ENNReal.ofReal ((↑n + 1) / (↑n - 1)) * (1 - p⁻¹)⁻¹ ≤ q) ∧
+                    (q⁻¹.toReal = (↑n - 1) / (↑n + 1) * (1 - p⁻¹.toReal) ↔
+                      q = ENNReal.ofReal ((↑n + 1) / (↑n - 1)) * (1 - p⁻¹)⁻¹) →
+                  ENNReal.ofReal (2 * ↑n / (↑n - 1)) < q →
+                    ENNReal.ofReal ((↑n + 1) / (↑n - 1)) * (1 - p⁻¹)⁻¹ ≤ q →
+                      RestrictionWork.BoundedSphereExtension n p q)
+              (fun hq hcoords hrad hbound => RestrictionWork.extension_top_bound hp) (Eq.symm hqt) hq hcoords hrad
+              hbound
+          else
+            if hs : q⁻¹.toReal < (↑n - 1) / (↑n + 1) * (1 - p⁻¹.toReal) then
+              RestrictionWork.strict_admissible_sufficiency hn hp hq hrad hs
+            else
+              have hrec := le_antisymm (hcoords.left.mpr hbound) (le_of_not_gt hs);
+              JSP001040Manuscript.finiteKnappBoundary n hn p q hp hq hrad (hcoords.right.mp hrec)
+                (lt_top_iff_ne_top.mpr hqt) })
+'JSP001040Manuscript.fullRange' depends on axioms: [propext, Classical.choice, Quot.sound]
+replaying ManuscriptStatement
