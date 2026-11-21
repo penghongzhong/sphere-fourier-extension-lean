@@ -23,7 +23,7 @@ LOGS = BUILD / 'logs'
 LIB = ROOT / '.lake/build/lib/lean'
 STATE = BUILD / 'compile-state.json'
 MATHLIB = 'd13f23b723b8a846827a245b89c10fc7d3f11612'
-ROOTS = ['ManuscriptCorrespondence', 'JSP001040FinalAudit']
+ROOTS = ['ManuscriptCorrespondence', 'JSP001040FinalAudit', 'Submission']
 ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
 
 
@@ -190,7 +190,7 @@ def main():
     print(f'Compilation complete in {time.monotonic() - start:.1f}s.', flush=True)
 
     audits = {}
-    for module in ['ManuscriptStatement', 'ManuscriptCorrespondence', 'JSP001040FinalAudit']:
+    for module in ['ManuscriptStatement', 'ManuscriptCorrespondence', 'JSP001040FinalAudit', 'Submission']:
         log = LOGS / (module + '.audit.log')
         run([lean, '-DautoImplicit=false', '-j1', module + '.lean'], log, env)
         expected = re.findall(r'^#print axioms (\S+)', (ROOT / (module + '.lean')).read_text(), re.M)
@@ -203,7 +203,7 @@ def main():
         audits[module] = parsed
         print(f'Axiom audit passed: {module}: {len(parsed)} declarations.', flush=True)
     replays = {}
-    for module in ['ManuscriptStatement', 'RestrictionWork.JSP001040CatalogStatement']:
+    for module in ['ManuscriptStatement', 'RestrictionWork.JSP001040CatalogStatement', 'Submission']:
         run(['leanchecker', '-v', module], LOGS / (module + '.kernel.log'), env)
         replays[module] = 0
         print(f'Kernel replay passed: {module}', flush=True)

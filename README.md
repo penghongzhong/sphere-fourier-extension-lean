@@ -5,7 +5,7 @@
 Lean sources accompanying **The sharp Fourier extension estimate for the sphere**.
 The repository restores the complete source dependency closure from the archived
 version 24 proof package, together with the current manuscript and its statement
-correspondence. There are **2,310 proof modules**, plus `lakefile.lean`.
+correspondence. There are **2,310 original proof modules**, plus the MathDB submission entry point `Submission.lean` and `lakefile.lean`.
 
 ## Reproduce the verification
 
@@ -36,8 +36,20 @@ For an interrupted local build, `python3 scripts/verify.py --jobs 2 --resume`
 reuses objects only when their source/dependency fingerprints and object hashes
 match the local checkpoint. CI deliberately performs the full rebuild.
 
+## JSP-001040 / MathDB submission
+
+The repository root includes [`Submission.lean`](Submission.lean), which exposes
+`JSP001040Submission.fullRange` and `JSP001040Submission.finiteKnappBoundary`.
+These are direct consequences of the original published Lean proof declarations,
+not separate analytic assumptions. The submission entry point participates in
+full-source compilation, axiom audit, and kernel replay via `scripts/verify.py`.
+The presence of `Submission.lean` does not constitute independent acceptance
+by MathDB or the Justin Sun Prize; the original statement and contribution
+scope must be reviewed externally.
+
 ## Main files
 
+- [`Submission.lean`](Submission.lean): the MathDB-facing root-level theorem entry point.
 - [`ManuscriptStatement.lean`](ManuscriptStatement.lean): the two main statements
   with the actual sphere surface measure and Fourier kernel.
 - [`ManuscriptCorrespondence.lean`](ManuscriptCorrespondence.lean): declarations

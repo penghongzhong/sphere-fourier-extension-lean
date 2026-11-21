@@ -21,3 +21,4 @@ lean_lib JSP001040FinalAudit
 @[default_target] lean_lib ManuscriptCorrespondence
 @[default_target] lean_lib ManuscriptStatement
 lean_lib UnconditionalExtensionReplay
+@[default_target] lean_lib Submission
